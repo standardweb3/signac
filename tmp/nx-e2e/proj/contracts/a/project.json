@@ -1,0 +1,31 @@
+{
+  "root": "contracts/a",
+  "projectType": "library",
+  "sourceRoot": "contracts/a/src",
+  "targets": {
+    "build": {
+      "executor": "nxink:build",
+      "options": {
+        "release": false
+      },
+      "configurations": {
+        "production": {
+          "release": true
+        }
+      }
+    },
+    "test": {
+      "executor": "nxink:test",
+      "options": {}
+    },
+    "lint": {
+      "executor": "nxink:clippy",
+      "options": {
+        "fix": false,
+        "failOnWarnings": true,
+        "noDeps": true
+      }
+    }
+  },
+  "tags": []
+}

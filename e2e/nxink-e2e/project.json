@@ -1,0 +1,18 @@
+{
+	"root": "e2e\\nxink-e2e",
+	"projectType": "application",
+	"sourceRoot": "e2e\\nxink-e2e/src",
+	"targets": {
+		"e2e": {
+			"executor": "@nrwl/nx-plugin:e2e",
+			"options": {
+				"target": "nxink:build",
+				"npmPackageName": "nxink",
+				"pluginOutputPath": "dist/packages/nxink",
+				"jestConfig": "e2e/nxink-e2e/jest.config.js"
+			}
+		}
+	},
+	"tags": [],
+	"implicitDependencies": ["nxink"]
+}

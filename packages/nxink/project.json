@@ -1,0 +1,56 @@
+{
+	"root": "packages/nxink",
+	"sourceRoot": "packages/nxink/src",
+	"projectType": "library",
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"options": {
+				"lintFilePatterns": ["packages/nxink/**/*.ts"]
+			},
+			"outputs": ["{options.outputFile}"]
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/packages/nxink"],
+			"options": {
+				"jestConfig": "packages/nxink/jest.config.js",
+				"passWithNoTests": true
+			}
+		},
+		"build": {
+			"executor": "@nrwl/node:package",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/packages/nxink",
+				"tsConfig": "packages/nxink/tsconfig.lib.json",
+				"packageJson": "packages/nxink/package.json",
+				"main": "packages/nxink/src/index.ts",
+				"assets": [
+					"packages/nxink/*.md",
+					{
+						"input": "./packages/nxink/src",
+						"glob": "**/!(*.ts)",
+						"output": "./src"
+					},
+					{
+						"input": "./packages/nxink/src",
+						"glob": "**/*.d.ts",
+						"output": "./src"
+					},
+					{
+						"input": "./packages/nxink",
+						"glob": "generators.json",
+						"output": "."
+					},
+					{
+						"input": "./packages/nxink",
+						"glob": "executors.json",
+						"output": "."
+					}
+				]
+			}
+		}
+	},
+	"tags": []
+}

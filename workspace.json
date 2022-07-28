@@ -1,0 +1,7 @@
+{
+	"version": 2,
+	"projects": {
+		"nxink": "packages/nxink",
+		"nxink-e2e": "e2e/nxink-e2e"
+	}
+}
