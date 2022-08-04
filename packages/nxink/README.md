@@ -1,39 +1,36 @@
-# @nxrs/cargo
+# nxink
 
-[![npm version](https://badge.fury.io/js/%40nxrs%2Fcargo.svg)](https://badge.fury.io/js/%40nxrs%2Fcargo)
+Nxink is a plugin for Nx to operate ink! smart contracts
 
-This is a WIP plugin for `@nrwl/nx` adding support for Rust applications and libraries.
+## Prerequisite
+
+install [cargo-contract](https://github.com/paritytech/cargo-contract#installation)
 
 ## Generators
 
 ```sh
-# @nxrs/cargo:bin also works
-> nx generate @nxrs/cargo:app my-rust-app
-```
-
-```sh
-> nx generate @nxrs/cargo:lib my-rust-lib
+> nx generate nxink:ink my-ink-contract
 ```
 
 ## Executors
 
 ```sh
-# Build a library or binary
-> nx build my-rust-app
+# Build a contract
+> nx build my-ink-contract
 
 # Run unit tests in a library
-> nx test my-rust-lib
+> nx test my-ink-contract
 
 # Check a Rust project with `clippy`
-> nx lint my-rust-app
+> nx lint my-ink-contract
 # Don't fail on warnings:
-> nx lint my-rust-app --fail-on-warnings false
+> nx lint my-ink-contract --fail-on-warnings false
 ```
 
 ### Options
 
-The executors accept most of the same CLI args as the corresponding `cargo` commands. When in doubt, run with the `--help` flag to see all options with descriptions:
+The executors accept most of the same CLI args as the corresponding `cargo contract` commands. When in doubt, run with the `--help` flag to see all options with descriptions:
 
 ```sh
-> nx build my-rust-app --help
+> nx build my-ink-contract --help
 ```
