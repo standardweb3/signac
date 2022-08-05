@@ -9,59 +9,49 @@
 			"type": "string",
 			"description": "Space or comma separated list of features to activate, or \"all\"."
 		},
-		"noDefaultFeatures": {
-			"type": "boolean",
-			"description": "Do not activate the `default` feature of the package."
-		},
-		"target": {
+		"generate": {
 			"type": "string",
-			"description": "Build for the given architecture. The default is the host architecture. The general format of the triple is `<arch><sub>-<vendor>-<sys>-<abi>`. Run `rustc --print target-list` for a list of supported targets.\n\nThis may also be specified with the `build.target` [config value](https://doc.rust-lang.org/cargo/reference/config.html).\n\nNote that specifying this flag makes Cargo run in a different mode where the target artifacts are placed in a separate directory. See the [build cache](https://doc.rust-lang.org/cargo/guide/build-cache.html) documentation for more details."
+			"description": "\nWhich build artifacts to generate. \n- `all`: Generate the Wasm, the metadata and a bundled `<name>.contract` file. \n\n- `code-only`: Only the Wasm is created, generation of metadata and a bundled\n`<name>.contract` file is skipped.\n\n- `check-only`: No artifacts produced: runs the `cargo check` command for the Wasm\ntarget, only checks for compilation errors.\n\n[default: all]\n[possible values: all, code-only, check-only]"
 		},
-		"release": {
+		"keep-debug-symbols": {
 			"type": "boolean",
-			"description": "Build optimized artifacts with the `release` profile. See the [PROFILES](https://doc.rust-lang.org/cargo/commands/cargo-build.html#profiles) section for details on how this affects profile selection."
+			"description": "Do not remove symbols (Wasm name section) when optimizing.\n\nThis is useful if one wants to analyze or debug the optimized binary."
 		},
-		"targetDir": {
+		"manifest-path": {
 			"type": "string",
-			"description": "Directory for all generated artifacts and intermediate files. May also be specified with the `CARGO_TARGET_DIR` environment variable, or the `build.target-dir` [config value](https://doc.rust-lang.org/cargo/reference/config.html). Defaults to `target` in the root of the workspace."
-		},
-		"outDir": {
-			"type": "string",
-			"description": "Copy final artifacts to this directory.\n\nThis option is unstable and available only on the [nightly channel](https://doc.rust-lang.org/book/appendix-07-nightly-rust.html). See https://github.com/rust-lang/cargo/issues/6790 for more information."
-		},
-		"verbose": {
-			"type": "boolean",
-			"description": "Use verbose output. May also be specified with the term.verbose [config value](https://doc.rust-lang.org/cargo/reference/config.html).",
-			"alias": "v"
-		},
-		"veryVerbose": {
-			"type": "boolean",
-			"description": "Include extra output such as dependency warnings and build script output."
-		},
-		"quiet": {
-			"type": "boolean",
-			"description": "No output printed to stdout.",
-			"alias": "q"
-		},
-		"messageFormat": {
-			"type": "string",
-			"description": "The output format for diagnostic messages. Can be specified multiple times and consists of comma-separated values. Valid values:\n  * `human` (default): Display in a human-readable text format. Conflicts with `short` and `json`.\n  * `short`: Emit shorter, human-readable text messages. Conflicts with `human` and `json`.\n  * `json`: Emit JSON messages to stdout. See [the reference](https://doc.rust-lang.org/cargo/reference/external-tools.html#json-messages) for more details. Conflicts with `human` and `short`.\n  * `json-diagnostic-short`: Ensure the `rendered` field of JSON messages contains the \"short\" rendering from rustc. Cannot be used with `human` or `short`.\n  * `json-diagnostic-rendered-ansi`: Ensure the `rendered` field of JSON messages contains embedded ANSI color codes for respecting rustc's default color scheme. Cannot be used with `human` or `short`.\n  * `json-render-diagnostics`: Instruct Cargo to not include rustc diagnostics in JSON messages printed, but instead Cargo itself should render the JSON diagnostics coming from rustc. Cargo's own JSON diagnostics and others coming from rustc are still emitted. Cannot be used with `human` or `short`."
-		},
-		"locked": {
-			"type": "boolean",
-			"description": "Requires that the `Cargo.lock` file is up-to-date. If the lock file is missing, or it needs to be updated, Cargo will exit with an error."
-		},
-		"frozen": {
-			"type": "boolean",
-			"description": "Like `locked`, but prevents Cargo from attempting to access the network to determine if `Cargo.lock` is out-of-date."
+			"description": "Path to the `Cargo.toml` of the contract to build"
 		},
 		"offline": {
 			"type": "boolean",
-			"description": "Prevents Cargo from accessing the network for any reason. Without this flag, Cargo will stop with an error if it needs to access the network and the network is not available. With this flag, Cargo will attempt to proceed without the network if possible."
+			"description": "Build offline"
 		},
-		"toolchain": {
+		"optimization-passes": {
 			"type": "string",
-			"description": "See the [rustup documentation](https://rust-lang.github.io/rustup/overrides.html) for more information about how toolchain overrides work."
+			"description": ""
+		},
+		"output-json": {
+			"type": "boolean",
+			"description": "Export the build output in JSON format"
+		},
+		"quiet": {
+			"type": "boolean",
+			"description": "No output printed to stdout"
+		},
+		"release": {
+			"type": "boolean",
+			"description": "By default the contract is compiled with debug functionality included. \nThis enables the contract to output debug messages, but increases the contract size and the amount of gas used.\n\nA production contract should always be build in `release` mode! Then no debug\nfunctionality is compiled into the contract."
+		},
+		"skip-linting": {
+			"type": "boolean",
+			"description": "Skips linting checks during the build process"
+		},
+		"verbose": {
+			"type":"boolean",
+			"description": "Use verbose output"
+		},
+		"Z, --unstable-options": {
+			"type":"string",
+			"description": "Use the original manifest (Cargo.toml), do not modify for build optimizations"
 		}
 	},
 	"required": []
