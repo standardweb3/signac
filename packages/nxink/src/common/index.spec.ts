@@ -13,7 +13,7 @@ describe("common utils", () => {
 			args.unshift("cargo");
 
 			expect(args.join(" ")).toEqual(
-				"cargo build --bin test-app --target 86_64-pc-windows-gnu"
+				"cargo contract build --bin test-app --target 86_64-pc-windows-gnu"
 			);
 		});
 	});

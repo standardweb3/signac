@@ -23,7 +23,7 @@ describe("init generator", () => {
 		expect(rustfmtToml).toBeTruthy();
 
 		let content = toolchainToml?.content!.toString();
-		expect(content).toContain(`channel = "stable"`);
+		expect(content).toContain(`channel = "nightly"`);
 	});
 
 	it("should respect the 'toolchain' CLI option", async () => {
