@@ -10,5 +10,5 @@ module.exports = {
 		"^.+\\.[tj]s$": "ts-jest",
 	},
 	moduleFileExtensions: ["ts", "js", "html"],
-	coverageDirectory: "../../coverage/e2enxink-e2e",
+	coverageDirectory: "../../coverage/e2e/nxink-e2e",
 };
