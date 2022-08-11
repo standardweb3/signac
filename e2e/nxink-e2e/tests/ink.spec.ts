@@ -11,18 +11,4 @@ describe("generate nxink:ink", () => {
 			nrwl.checkFilesExist(`contracts/${ink}/src/lib.rs`);
 		}).not.toThrow();
 	}, 120000);
-
-    // TODO: add tests for other cargo-contract commands
-    it("should create a new ink contract", async () => {
-		let ink = nrwl.uniq("nxink");
-		nrwl.ensureNxProject("nxink", "dist/packages/nxink");
-
-		await nrwl.runNxCommandAsync(`generate nxink:ink ${ink}`);
-
-		expect(() => {
-			nrwl.checkFilesExist(`contracts/${ink}/src/lib.rs`);
-		}).not.toThrow();
-	}, 120000);
-
-    
 });
