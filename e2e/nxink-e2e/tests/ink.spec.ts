@@ -8,7 +8,7 @@ describe("generate nxink:ink", () => {
 		await nrwl.runNxCommandAsync(`generate nxink:ink ${ink}`);
 
 		expect(() => {
-			nrwl.checkFilesExist(`contracts/${ink}/lib.rs`);
+			nrwl.checkFilesExist(`contracts/${ink}/src/lib.rs`);
 		}).not.toThrow();
 	}, 120000);
 
@@ -20,7 +20,7 @@ describe("generate nxink:ink", () => {
 		await nrwl.runNxCommandAsync(`generate nxink:ink ${ink}`);
 
 		expect(() => {
-			nrwl.checkFilesExist(`contracts/${ink}/lib.rs`);
+			nrwl.checkFilesExist(`contracts/${ink}/src/lib.rs`);
 		}).not.toThrow();
 	}, 120000);
 
