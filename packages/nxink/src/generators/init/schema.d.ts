@@ -1,7 +1,7 @@
 export default interface Options {
 	/**
 	 * The rustup toolchain channel for projects in this workspace
-	 * @default "stable"
+	 * @default "nightly"
 	 */
 	toolchain?: string;
 }

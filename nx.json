@@ -1,4 +1,5 @@
 {
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"npmScope": "nxink",
 	"affected": {
 		"defaultBase": "main"
@@ -28,7 +29,7 @@
 		]
 	},
 	"workspaceLayout": {
-		"appsDir": "e2e",
+		"appsDir": "apps",
 		"libsDir": "packages"
 	},
 	"cli": {

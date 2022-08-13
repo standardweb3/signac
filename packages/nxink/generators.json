@@ -9,6 +9,12 @@
 			"description": "Initialize the nxink plugin",
 			"hidden": true
 		},
+		"preset": {
+			"factory": "./src/generators/preset/generator",
+			"schema": "./src/generators/preset/schema.json",
+			"description": "Preset for Nxink workspace",
+			"hidden": true
+		},
 		"binary": {
 			"factory": "./src/generators/binary/generator",
 			"schema": "./src/generators/binary/schema.json",
