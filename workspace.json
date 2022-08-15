@@ -2,6 +2,7 @@
 	"$schema": "./node_modules/nx/schemas/workspace-schema.json",
 	"version": 2,
 	"projects": {
+		"c": "packages/c",
 		"nxink": "packages/nxink",
 		"nxink-e2e": "e2e/nxink-e2e"
 	}

@@ -1,0 +1,9 @@
+[
+    {
+      "name": "", // Name of an asset to fetch
+      "source": "", // Source to retrieve
+      "symbol": "", // Ticker
+      "decimals": 18, // Accuracy decimals
+      "logoURI": "" // Logo URL
+    },
+  ]

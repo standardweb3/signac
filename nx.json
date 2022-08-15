@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/nx/schemas/nx-schema.json",
-	"npmScope": "nxink",
+	"npmScope": "signac",
 	"affected": {
 		"defaultBase": "main"
 	},

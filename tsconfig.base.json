@@ -16,6 +16,7 @@
 		"baseUrl": ".",
 		"strictNullChecks": true,
 		"paths": {
+			"@signac/c": ["packages/c/src/index.ts"],
 			"nxink": ["packages/nxink/src/index.ts"]
 		}
 	},

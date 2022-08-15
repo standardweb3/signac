@@ -1,3 +1,7 @@
 module.exports = {
-	projects: ["<rootDir>/packages/nxink", "<rootDir>/e2e/nxink-e2e"],
+	projects: [
+		"<rootDir>/packages/nxink",
+		"<rootDir>/e2e/nxink-e2e",
+		"<rootDir>/packages/c",
+	],
 };
