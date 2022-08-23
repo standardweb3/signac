@@ -1,5 +1,5 @@
 {
-  "name": "@digitalnative/lumen-config",
+  "name": "signac-config",
   "description": "Utility for interacting with houston-config.js files",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import runHunter from "@digitalnative/lumen-hunt";
-const commander = require("commander");
+import commander from "commander";
 const program = new commander.Command();
 
 program

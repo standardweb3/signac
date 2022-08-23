@@ -1,21 +1,11 @@
-# @digitalnative/lumen
+# c
 
-Core module and entry point for lumen to integrate all other commands and configurations
+This library was generated with [Nx](https://nx.dev).
 
-## Installation
+## Building
 
-Use the package manager [npm](https://www.npmjs.com/get-npm) to install the package.
+Run `nx build core` to build the library.
 
-```bash
-npm install @digitalnative/lumen
-```
+## Running unit tests
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[Apache 2.0](https://choosealicense.com/licenses/apache-2.0/)
+Run `nx test core` to execute the unit tests via [Jest](https://jestjs.io).

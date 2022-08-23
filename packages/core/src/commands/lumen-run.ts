@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import runClient from "@digitalnative/lumen-client";
-const commander = require("commander");
+import commander from "commander";
 const program = new commander.Command();
 
 program

@@ -1,4 +1,4 @@
-const commander = require("commander");
+import commander from "commander";
 const program = new commander.Command();
 import { showError, suggestCommand } from "../utils/logger.util";
 
