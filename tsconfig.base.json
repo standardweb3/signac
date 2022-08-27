@@ -17,6 +17,8 @@
 		"strictNullChecks": true,
 		"paths": {
 			"@signac/c": ["packages/c/src/index.ts"],
+			"@signac/hello-tsc": ["packages/hello-tsc/src/index.ts"],
+			"@signac/hello-tsc2": ["packages/hello-tsc2/src/index.ts"],
 			"nxink": ["packages/nxink/src/index.ts"]
 		}
 	},

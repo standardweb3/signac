@@ -1,0 +1,22 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc",
+		"module": "commonjs",
+		"target": "ES2022",
+		"declaration": false,
+		"strict": false,
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"importHelpers": true,
+		"removeComments": true,
+		"noFallthroughCasesInSwitch": true,
+		"types": ["jest", "node"],
+	},
+	"updateBuildableProjectDepsInPackageJson": true,
+ 	"buildableProjectDepsInPackageJsonType": "dependencies",
+	"include": ["**/*.ts"],
+	"exclude": ["**/*.spec.ts"]
+}
