@@ -1,6 +1,6 @@
 {
   "name": "signac",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "commonjs",
   "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
