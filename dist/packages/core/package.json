@@ -1,8 +1,8 @@
 {
   "name": "signac",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "commonjs",
-  "description": "A rust smart contract framework",
+  "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",
   "homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/core#readme",
@@ -10,9 +10,9 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
   "bin": {
-    "signac": "index.js"
+    "signac": "./dist/index.js"
   },
   "scripts": {
     "start": "npm run build && npm run global",
@@ -33,9 +33,10 @@
     "middleware"
   ],
   "dependencies": {
+    "@signac/init": "^0.0.4",
     "@types/figlet": "^1.2.0",
     "@types/fs-extra": "^9.0.1",
-    "@types/inquirer": "^6.5.0",
+    "@types/inquirer": "^9.0.1",
     "@types/node": "^14.0.14",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
