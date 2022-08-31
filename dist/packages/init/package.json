@@ -8,14 +8,14 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "src/index.js",
   "scripts": {
     "build": "tsc",
     "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
     "audit": "npm_config_yes=true npx yarn-audit-fix"
   },
-  "types": "index.d.ts",
+  "types": "src/index.d.ts",
   "dependencies": {
     "@signac/error": "0.0.3",
     "@signac/events": "0.0.2",
