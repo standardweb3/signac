@@ -1,6 +1,6 @@
 {
   "name": "@signac/core",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "commonjs",
   "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
@@ -33,6 +33,7 @@
     "middleware"
   ],
   "dependencies": {
+    "@nrwl/web": "^14.6.0",
     "@signac/init": "^0.0.4",
     "@types/figlet": "^1.2.0",
     "@types/fs-extra": "^9.0.1",
