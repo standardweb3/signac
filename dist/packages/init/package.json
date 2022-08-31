@@ -8,8 +8,8 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "version": "0.0.4",
-  "main": "index.js",
+  "version": "0.0.5",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc",
     "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
