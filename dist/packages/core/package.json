@@ -1,6 +1,6 @@
 {
   "name": "signac",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "commonjs",
   "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
@@ -10,9 +10,9 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "main": "./dist/index.js",
+  "main": "index.js",
   "bin": {
-    "signac": "./dist/index.js"
+    "signac": "index.js"
   },
   "scripts": {
     "start": "npm run build && npm run global",
