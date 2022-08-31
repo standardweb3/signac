@@ -1,6 +1,6 @@
 {
   "name": "@signac/core",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "commonjs",
   "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
