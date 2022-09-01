@@ -1,18 +1,17 @@
 {
   "name": "@signac/events",
   "version": "0.0.0",
-  "description": "Retro ",
+  "description": "Event emitter component for Signac",
   "license": "MIT",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",
-  "homepage": "https://github.com/digitalnativeinc/lumen/tree/master/packages/events#readme",
-  "repository": "https://github.com/digitalnativeinc/lumen/tree/master/packages/events",
+  "homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/events#readme",
+  "repository": "https://github.com/digitalnativeinc/signac/tree/master/packages/events",
   "bugs": {
-    "url": "https://github.com/digitalnativeinc/lumen/issues"
+    "url": "https://github.com/digitalnativeinc/signac/issues"
   },
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "prepare": "yarn build",
     "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
     "audit": "npm_config_yes=true npx yarn-audit-fix"
   },
@@ -35,14 +34,14 @@
     "@types/node": "^14.0.27",
     "@types/sinon": "^7.0.13",
     "fs-extra": "10.1.0",
-    "mocha": "^10.0.0",
     "sinon": "9.0.2",
     "ts-node": "8.10.2",
-    "typescript": "4.3.5"
+    "typescript": "4.3.5",
+    "@types/jest": "^28.1.8"
   },
   "keywords": [
     "events",
-    "lumen"
+    "signac"
   ],
   "publishConfig": {
     "access": "public"

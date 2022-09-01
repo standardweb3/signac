@@ -1,25 +1,79 @@
 import "source-map-support/register";
-import { EventManager } from "@digitalnative/lumen-events";
-const prompt = require("prompt");
+import { EventManager } from "@signac/events";
+import  SignacError  from "@signac/error";
+import validate from "validate.js";
 const fs = require("fs");
 
-const properties = [
-	{
-		name: "nomics",
-		validator: /^[a-zA-Z\s\-]+$/,
-		warning: "API key must be only letters, spaces, or dashes",
+var keyConstraints = {
+	rust: {
+		presence: false,
 	},
-	{
-		name: "finnhub",
-		validator: /^[a-zA-Z\s\-]+$/,
-		warning: "API key must be only letters, spaces, or dashes",
+	networks: {
+		presence: {
+			allowEmpty: false,
+		},
 	},
-];
+};
+
+var networkConstraints = {
+	url: {
+		presence: {
+			allowEmpty: false,
+		},
+		url: true,
+	},
+	typedef: {
+		presence: false,
+	},
+	accounts: {
+		presence: {
+			allowEmpty: false,
+		},
+	},
+};
+
+const checkValid = (data: any, constraints: any) => {
+	let result = validate(data, constraints);
+	if (result !== undefined) {
+		throw new SignacError(`Configuration Error: ${JSON.stringify(result, null, 2)}`, 400);
+	}
+};
+
+const validateConifg = (config: any) => {
+	validate.validators.presence.options = { message: "can't be empty" };
+	// validate whether key exists
+	checkValid(config, keyConstraints);
+	// validate each network
+	Object.keys(config["networks"]).every(k => {
+		let network = config["networks"][k];
+		// validate each network schema constraints
+		checkValid(network, networkConstraints);
+		// validate each network keys in accounts
+		Object.keys(network["accounts"]).every(a => {
+			checkValid(a, {
+				presence: true,
+				format: {
+					// Must be numbers followed by a name
+					pattern: "^[a-zA-Zs-]+$",
+					message: function (value: any) {
+						return validate.format(
+							"a mnemonic or private key ^%{key} must be only letters, spaces, or dashes",
+							{
+								key: value,
+							}
+						);
+					},
+				},
+			});
+		});
+	});
+};
+
 
 class SignacConfig {
 	[key: string]: any;
 
-	constructor({ dir = "./signac-config.ts" }) {
+	constructor({ dir = "./signac-config.js" }) {
 		const eventsOptions = this.eventManagerOptions(this);
 		this["events"] = new EventManager(eventsOptions);
 
@@ -30,9 +84,11 @@ class SignacConfig {
 			for (const [key, value] of Object.entries(config)) {
 				this[key] = value;
 			}
+			validateConifg(this);
 		} else {
 			throw new SignacError(
-				"signac-config.ts does not exist in current working directory"
+				"signac-config.js does not exist in current working directory",
+				404
 			);
 		}
 	}

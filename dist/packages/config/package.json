@@ -1,0 +1,54 @@
+{
+  "name": "",
+  "description": "Utility for interacting with houston-config.js files",
+  "license": "Apache-2.0",
+  "author": "Hyungsuk Kang <hskang9@gmail.com>",
+  "homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/config#readme",
+  "repository": "https://github.com/digitalnativeinc/signac/tree/master/packages/config",
+  "bugs": {
+    "url": "https://github.com/digitalnativeinc/signac/issues"
+  },
+  "version": "0.4.16",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
+    "audit": "npm_config_yes=true npx yarn-audit-fix"
+  },
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@polkadot/util": "^7.0.1",
+    "@polkadot/util-crypto": "^7.0.1",
+    "@signac/error": "0.0.3",
+    "@signac/events": "0.0.2",
+    "configstore": "^4.0.0",
+    "find-up": "^4.0.0",
+    "lodash.assignin": "^4.2.0",
+    "lodash.merge": "^4.6.2",
+    "original-require": "1.0.1",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@types/configstore": "5.0.1",
+    "@types/find-up": "^4.0.0",
+    "@types/fs-extra": "9.0.12",
+    "@types/lodash.assignin": "^4.2.6",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/node": "^12.12.9",
+    "@types/sinon": "^7.0.13",
+    "sinon": "9.0.2",
+    "ts-node": "8.10.2",
+    "typescript": "4.3.5",
+    "validate.js": "^0.13.1"
+  },
+  "keywords": [
+    "cli",
+    "middleware"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "59a937440bf34214fedcb118b91e4f7312607ea9",
+  "typings": "./src/index.d.ts"
+}

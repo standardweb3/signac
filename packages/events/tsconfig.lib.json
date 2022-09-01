@@ -4,7 +4,7 @@
 		"outDir": "../../dist/out-tsc",
 		"module": "commonjs",
 		"target": "ES2022",
-		"declaration": false,
+		"declaration": true,
 		"strict": false,
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,

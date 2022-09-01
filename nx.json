@@ -29,8 +29,8 @@
 		]
 	},
 	"workspaceLayout": {
-		"appsDir": "apps",
-		"libsDir": "packages"
+		"appsDir": "",
+		"libsDir": ""
 	},
 	"cli": {
 		"defaultCollection": "@nrwl/nx-plugin"

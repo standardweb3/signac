@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "ESNext",
-		"types": ["node"],
+		"types": ["node", "jest"],
 		"forceConsistentCasingInFileNames": true,
 		"lib": ["ES6", "ES2015", "ESNext", "DOM"],
 		"strict": true,

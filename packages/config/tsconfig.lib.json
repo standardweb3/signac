@@ -4,7 +4,7 @@
 		"outDir": "../../dist/out-tsc",
 		"module": "commonjs",
 		"target": "ESNext",
-		"declaration": false,
+		"declaration": true,
 		"strict": true,
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,

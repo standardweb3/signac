@@ -9,10 +9,10 @@ export const signac = program
   )
   .name("signac")
   .usage("<command> [arguments]")
-  .command("init [options]", "run lumen oracle provider", {
+  .command("init [options]", "run signac oracle provider", {
     executableFile: "./commands/signac-init",
   })
-  .command("add [options]", "run lumen liquidation hunter", {
+  .command("add [options]", "run signac liquidation hunter", {
     executableFile: "./commands/signac-new",
   })
   .on("command:*", function(operands: string[]) {

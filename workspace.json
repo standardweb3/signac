@@ -4,6 +4,7 @@
 	"projects": {
 		"config": "packages/config",
 		"core": "packages/core",
+		"init": "packages/init",
 		"error": "packages/error",
 		"events": "packages/events",
 		"nxink": "packages/nxink",

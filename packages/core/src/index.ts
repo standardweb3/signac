@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { lumen } from "./commands/signac";
+import { signac } from "./commands/signac";
 
-lumen.parse(process.argv);
+signac.parse(process.argv);

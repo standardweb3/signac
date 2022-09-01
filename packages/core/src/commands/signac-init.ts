@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-import runHunter from "@digitalnative/lumen-hunt";
+import runCommand from "@signac/init";
 import commander from "commander";
 const program = new commander.Command();
 
 program
-  .command("<dir> [options]")
+  .command("<project> [options]")
   .name("init")
   .usage("[options]")
-  .description("Initialize workspace for ")
-  .action(runHunter)
+  .description("Initialize Ink! smart contract workspace")
+  .action(runCommand)
   .parse(process.argv);

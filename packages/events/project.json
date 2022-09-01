@@ -9,7 +9,7 @@
 			"options": {
 				"outputPath": "dist/packages/events",
 				"main": "packages/events/src/index.ts",
-				"tsevents": "packages/events/tsevents.lib.json",
+				"tsConfig": "packages/events/tsconfig.lib.json",
 				"assets": ["packages/events/*.md"]
 			}
 		},
