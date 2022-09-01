@@ -70,6 +70,17 @@ const validateConifg = (config: any) => {
 };
 
 
+var constraints = {
+	"rust": {
+	  presence: false
+	},
+	"networks": {
+		presence: true,
+		pattern: "^[0-9]+ .+$",
+		message: "^The street for the shipping address must be a valid street name"
+	}
+  };
+
 class SignacConfig {
 	[key: string]: any;
 
