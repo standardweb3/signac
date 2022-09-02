@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "@signac/config",
   "description": "Utility for interacting with houston-config.js files",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",
@@ -8,14 +8,14 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "version": "0.4.16",
-  "main": "dist/index.js",
+  "version": "0.0.0",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc",
     "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
     "audit": "npm_config_yes=true npx yarn-audit-fix"
   },
-  "types": "dist/index.d.ts",
+  "types": "src/index.d.ts",
   "dependencies": {
     "@polkadot/util": "^7.0.1",
     "@polkadot/util-crypto": "^7.0.1",

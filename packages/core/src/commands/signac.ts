@@ -18,10 +18,10 @@ export const signac = program
     executableFile: "./commands/signac-compile",
   })
   .command("test [options]", "tests a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-compile",
+    executableFile: "./commands/signac-test",
   })
   .command("add [options]", "add a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-compile",
+    executableFile: "./commands/signac-add",
   })
   .on("command:*", function(operands: string[]) {
     showError(`error: unknown command '${operands[0]}'`);
