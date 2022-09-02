@@ -5,16 +5,24 @@ const tslib_1 = require("tslib");
 const commander_1 = tslib_1.__importDefault(require("commander"));
 const program = new commander_1.default.Command();
 const logger_util_1 = require("../utils/logger.util");
+const pjson = tslib_1.__importStar(require("../../package.json"));
+console.log(pjson.version);
 exports.signac = program
-    .version("0.0.0")
-    .description("Wasm smart contract framework")
+    .version(pjson.version)
+    .description("an Ink! smart contract framework")
     .name("signac")
     .usage("<command> [arguments]")
-    .command("init [options]", "run signac oracle provider", {
+    .command("init [options]", "initializes Signac contract workspace", {
     executableFile: "./commands/signac-init",
 })
-    .command("add [options]", "run signac liquidation hunter", {
-    executableFile: "./commands/signac-new",
+    .command("compile [options]", "compiles a smart contract inside Signac workspace", {
+    executableFile: "./commands/signac-compile",
+})
+    .command("test [options]", "tests a smart contract inside Signac workspace", {
+    executableFile: "./commands/signac-compile",
+})
+    .command("add [options]", "add a smart contract inside Signac workspace", {
+    executableFile: "./commands/signac-compile",
 })
     .on("command:*", function (operands) {
     logger_util_1.showError(`error: unknown command '${operands[0]}'`);

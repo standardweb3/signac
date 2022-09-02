@@ -6,6 +6,8 @@
 		"nx": "nx",
 		"start": "nx serve",
 		"build": "nx build",
+		"bootstrap": "bash ./scripts/ci.sh",
+		"publish-all": "yarn bootstrap && bash ./scripts/publish-package.sh",
 		"test": "nx test",
 		"lint": "nx workspace-lint && nx lint",
 		"e2e": "jest e2e/nxink-e2e --runInBand",

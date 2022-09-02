@@ -20,6 +20,6 @@
 	},
 	"updateBuildableProjectDepsInPackageJson": true,
 	"buildableProjectDepsInPackageJsonType": "dependencies",
-	"include": ["**/*.ts"],
+	"include": ["**/*.ts", "./package.json"],
 	"exclude": ["**/*.spec.ts"]
 }

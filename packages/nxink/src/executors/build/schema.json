@@ -27,7 +27,7 @@
 		},
 		"optimization-passes": {
 			"type": "string",
-			"description": ""
+			"description": "Number of optimization passes, passed as an argument to `wasm-opt`.\n\n - `0`: execute no optimization passes\n\n- `1`: execute 1 optimization pass (quick & useful opts, useful for iteration builds)\n\n"
 		},
 		"output-json": {
 			"type": "boolean",

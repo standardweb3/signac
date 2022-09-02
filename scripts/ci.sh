@@ -1,6 +1,17 @@
+#!/bin/bash
+# install dependancies, this is executed in root project directory
+packages=("core" "config" "error" "events" "init" "nxink")
 
-
-for dir in ./packages    # list directories in the form "/tmp/dirname/"
+for i in "${packages[@]}"
 do
-    echo "${dir}"    # print everything after the final "/"
+	cd "./packages/$i"
+    yarn
+    cd ../..
+done
+
+cd ../
+
+for i in "${packages[@]}"
+do
+    nx build "$i"
 done
