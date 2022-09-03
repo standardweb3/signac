@@ -2,11 +2,13 @@
 	"$schema": "./node_modules/nx/schemas/workspace-schema.json",
 	"version": 2,
 	"projects": {
+		"add-contract": "packages/add-contract",
 		"config": "packages/config",
 		"core": "packages/core",
 		"init": "packages/init",
 		"error": "packages/error",
 		"events": "packages/events",
+		"shell": "packages/shell",
 		"nxink": "packages/nxink",
 		"nxink-e2e": "e2e/nxink-e2e"
 	}

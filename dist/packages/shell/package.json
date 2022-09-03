@@ -1,0 +1,35 @@
+{
+  "name": "@signac/shell",
+  "version": "0.0.1",
+  "description": "Shell command library for Signac CLI",
+  "license": "Apache-2.0",
+  "author": "Hyungsuk Kang <hskang9@gmail.com>",
+  "homepage": "https://github.com/digitalnative/signac/tree/master/packages/error#readme",
+  "repository": "https://github.com/digitalnative/signac/tree/master/packages/error",
+  "bugs": {
+    "url": "https://github.com/digitalnative/signac/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "cli",
+    "middleware"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "extendable-error": "^0.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "chalk": "^5.0.1",
+    "child_process": "^1.0.2",
+    "fs-extra": "10.1.0",
+    "ts-node": "8.10.2",
+    "typescript": "4.3.5"
+  },
+  "typings": "./src/index.d.ts"
+}

@@ -1,0 +1,33 @@
+{
+	"root": "packages/add-contract",
+	"sourceRoot": "packages/add-contract/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/packages/add-contract",
+				"main": "packages/add-contract/src/index.ts",
+				"tsConfig": "packages/add-contract/tsconfig.lib.json",
+				"assets": ["packages/add-contract/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": []
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/packages/add-contract"],
+			"options": {
+				"jestConfig": "packages/add-contract/jest.config.js",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": []
+}

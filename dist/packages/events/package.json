@@ -9,13 +9,13 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc",
     "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
     "audit": "npm_config_yes=true npx yarn-audit-fix"
   },
-  "types": "dist/index.d.ts",
+  "types": "src/index.d.ts",
   "dependencies": {
     "configstore": "^5.0.1",
     "console-stamp": "^3.0.3",
@@ -46,6 +46,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "59a937440bf34214fedcb118b91e4f7312607ea9",
   "typings": "./src/index.d.ts"
 }

@@ -4,18 +4,19 @@
 ![Proudly built for Ink!](https://raw.githubusercontent.com/paritytech/ink/bb4104ec423c34ff863d8d2eb619f10f4962b570/.images/built-for-ink.svg)
 
 
-Signac is a development environment to compile, deploy, test, and debug your Polkadot software. Get ink! contract deployed in multichain ecosystem.
+*Signac is a development environment to compile, deploy, test, and debug your Polkadot software. Get ink! contract deployed in multichain ecosystem.*
 
 
 ## Getting started
+
+- :book: Try quickstart tutorial for Ink! smart contract development in [documentation]()
+- :question: Ask question in our [Discord]()
 
 ## Prerequisites
 
 - :gear: [NodeJS](https://nodejs.org/) 
 - :crab: [Rust](https://www.rust-lang.org/)
 - :toolbox: [Yarn](https://yarnpkg.com/)/[Nx](https://nx.dev)
-
-## Build your first ink! smart contract
 
 ###### Developer Quickstart:
 
