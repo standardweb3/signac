@@ -6,10 +6,9 @@ const commander_1 = tslib_1.__importDefault(require("commander"));
 const program = new commander_1.default.Command();
 const logger_util_1 = require("../utils/logger.util");
 const pjson = tslib_1.__importStar(require("../../package.json"));
-console.log(pjson.version);
 exports.signac = program
     .version(pjson.version)
-    .description("an Ink! smart contract framework")
+    .description("a nascent Ink! smart contract framework for rust developers")
     .name("signac")
     .usage("<command> [arguments]")
     .command("init [options]", "initializes Signac contract workspace", {
@@ -19,10 +18,10 @@ exports.signac = program
     executableFile: "./commands/signac-compile",
 })
     .command("test [options]", "tests a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-compile",
+    executableFile: "./commands/signac-test",
 })
     .command("add [options]", "add a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-compile",
+    executableFile: "./commands/signac-add",
 })
     .on("command:*", function (operands) {
     logger_util_1.showError(`error: unknown command '${operands[0]}'`);

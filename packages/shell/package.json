@@ -1,6 +1,6 @@
 {
   "name": "@signac/shell",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Shell command library for Signac CLI",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",

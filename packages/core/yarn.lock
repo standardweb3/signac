@@ -245,6 +245,17 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@signac/add-contract@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@signac/add-contract/-/add-contract-0.0.0.tgz#95286b737b9455f68eb2140153548860c0f15020"
+  integrity sha512-kiTGSygaG1SU/4y5TGUQcEvZaQoRynkrNsXeu7n9brZbgC1/EkwoT07sd8kj25iD/G6ClqR8PBXEq4v2zb3NIw==
+  dependencies:
+    "@signac/error" "0.0.3"
+    "@signac/events" "0.0.2"
+    "@types/inquirer" "^9.0.1"
+    chalk "^4.1.0"
+    inquirer "^7.3.3"
+
 "@signac/error@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.3.tgz#0ec1246e50818ea5f92afd1b215b461e6cb641d2"

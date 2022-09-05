@@ -33,6 +33,7 @@
 		"middleware"
 	],
 	"dependencies": {
+		"@signac/add-contract": "^0.0.0",
 		"@signac/init": "^0.0.9",
 		"@types/figlet": "^1.2.0",
 		"@types/fs-extra": "^9.0.1",
