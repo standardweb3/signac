@@ -16,7 +16,7 @@
 
 - :gear: [NodeJS](https://nodejs.org/) 
 - :crab: [Rust](https://www.rust-lang.org/)
-- :toolbox: [Yarn](https://yarnpkg.com/)/[Nx](https://nx.dev)
+- :toolbox: [Yarn](https://yarnpkg.com/)/[Nx](https://nx.dev)/[Cargo Contract](https://github.com/paritytech/cargo-contract)
 
 ###### Developer Quickstart:
 
