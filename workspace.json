@@ -6,9 +6,12 @@
 		"config": "packages/config",
 		"core": "packages/core",
 		"init": "packages/init",
+		"build": "packages/build",
+		"lint": "packages/lint",
+		"test": "packages/test",
 		"error": "packages/error",
 		"events": "packages/events",
-		"shell": "packages/shell",
+		"common": "packages/common",
 		"nxink": "packages/nxink",
 		"nxink-e2e": "e2e/nxink-e2e",
 		"signac-e2e": "e2e/signac-e2e"
