@@ -29,5 +29,6 @@ export declare function cargoNames(name: string): Names;
 export declare function normalizeGeneratorOptions<T extends GeneratorCLIOptions>(projectType: "application" | "library" | "contract" | "package", host: Tree, opts: T): T & GeneratorOptions;
 export declare function updateWorkspaceMembers(host: Tree, opts: GeneratorOptions): void;
 export declare function parseCargoArgs(opts: CargoOptions, ctx: ExecutorContext): string[];
+export declare function runCargoContract(args: string[], ctx: ExecutorContext): Promise<void>;
 export declare function runCargo(args: string[], ctx: ExecutorContext): Promise<void>;
 export {};

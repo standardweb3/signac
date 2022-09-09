@@ -6,7 +6,7 @@ function default_1(opts, ctx) {
     return tslib_1.__awaiter(this, void 0, void 0, function* () {
         try {
             let args = common_1.parseCargoArgs(opts, ctx);
-            yield common_1.runCargo(args, ctx);
+            yield common_1.runCargoContract(args, ctx);
             return { success: true };
         }
         catch (err) {
