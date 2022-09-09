@@ -2,7 +2,7 @@ import { red, green, cyan, yellow } from "kleur";
 import * as similiarity from "string-similarity";
 
 export enum ConsoleMessage {
-  TITLE = "Lumen",
+  TITLE = "Signac",
   BANNER = "A chain agnostic oracle client",
   ERROR = "ERROR: ",
   SUCCESS = "SUCCESS: ",
@@ -44,7 +44,7 @@ export const showUpdate = (fileName: string, filePath: string): void => {
 };
 
 export const suggestCommand = (cmd: string, cmds: any) => {
-  const matches = similiarity.findBestMatch(cmd, cmds);
+  let matches = similiarity.findBestMatch(cmd, cmds);
   console.log(
     yellow(`Invalid command. Did you mean ${matches.bestMatch.target}?`),
   );

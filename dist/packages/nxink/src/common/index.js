@@ -86,9 +86,6 @@ function parseCargoArgs(opts, ctx) {
         case "test":
             args.push("test");
             break;
-        case "upload":
-            args.push("upload");
-            break;
         case "subquery": {
             args.pop();
             args.push("subquery");

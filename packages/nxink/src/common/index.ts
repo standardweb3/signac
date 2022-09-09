@@ -143,7 +143,6 @@ export function parseCargoArgs(opts: CargoOptions, ctx: ExecutorContext): string
 	switch (ctx.targetName) {
 		case "build": args.push("build"); break;
 		case "test":  args.push("test");  break;
-		case "upload": args.push("upload"); break;
 		case "subquery": {
 			args.pop();
 			args.push("subquery");
