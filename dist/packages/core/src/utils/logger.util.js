@@ -6,7 +6,7 @@ const kleur_1 = require("kleur");
 const similiarity = tslib_1.__importStar(require("string-similarity"));
 var ConsoleMessage;
 (function (ConsoleMessage) {
-    ConsoleMessage["TITLE"] = "Lumen";
+    ConsoleMessage["TITLE"] = "Signac";
     ConsoleMessage["BANNER"] = "A chain agnostic oracle client";
     ConsoleMessage["ERROR"] = "ERROR: ";
     ConsoleMessage["SUCCESS"] = "SUCCESS: ";
@@ -46,7 +46,7 @@ const showUpdate = (fileName, filePath) => {
 };
 exports.showUpdate = showUpdate;
 const suggestCommand = (cmd, cmds) => {
-    const matches = similiarity.findBestMatch(cmd, cmds);
+    let matches = similiarity.findBestMatch(cmd, cmds);
     console.log(kleur_1.yellow(`Invalid command. Did you mean ${matches.bestMatch.target}?`));
 };
 exports.suggestCommand = suggestCommand;

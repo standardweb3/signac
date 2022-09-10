@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"cli": "nx",
+	"title": "Test executor for nxink",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"manifest-path": {
+			"type": "string",
+			"description": "Path to the `Cargo.toml` of the contract to test"
+		},
+		"quiet": {
+			"type": "boolean",
+			"description": "No output printed to stdout"
+		},
+		"verbose": {
+			"type": "boolean",
+			"description": "Use verbose output"
+		}
+	},
+	"required": []
+}

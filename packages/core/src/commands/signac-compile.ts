@@ -1,11 +1,8 @@
 #!/usr/bin/env node
 //import runCommand from "@signac/new";
 import commander from "commander";
+import runCommand from "@signac/build";
 const program = new commander.Command();
-
-const mock = () => {
-  
-}
 
 program
   .command("<contract> [options]")

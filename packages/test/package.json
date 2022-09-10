@@ -17,6 +17,7 @@
 	},
 	"types": "src/index.d.ts",
 	"dependencies": {
+		"@signac/common": "^0.0.0",
 		"@signac/error": "0.0.3",
 		"@signac/events": "0.0.2",
 		"@types/inquirer": "^9.0.1",

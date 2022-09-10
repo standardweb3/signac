@@ -1,5 +1,5 @@
 export declare enum ConsoleMessage {
-    TITLE = "Lumen",
+    TITLE = "Signac",
     BANNER = "A chain agnostic oracle client",
     ERROR = "ERROR: ",
     SUCCESS = "SUCCESS: ",
