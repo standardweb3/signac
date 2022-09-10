@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/digitalnativeinc/signac/issues"
   },
-  "version": "0.0.2",
+  "version": "0.0.1",
   "main": "src/index.js",
   "scripts": {
     "build": "tsc",
@@ -17,12 +17,12 @@
   },
   "types": "src/index.d.ts",
   "dependencies": {
-    "@signac/common": "^0.0.0",
+    "@signac/common": "^0.0.1",
     "@signac/error": "0.0.3",
     "@signac/events": "0.0.2",
     "@types/inquirer": "^9.0.1",
     "chalk": "^4.1.0",
-    "inquirer": "^9.1.1"
+    "inquirer": "^7.3.3"
   },
   "devDependencies": {
     "sinon": "9.0.2",
