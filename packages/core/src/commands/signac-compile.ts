@@ -16,5 +16,5 @@ program
   .option("--verbose", "Use verbose output")
   .option("--skip-linting", "Skips linting checks during the build process")
   .description("compiles a contract in the workspace")
-  .action(mock)
+  .action(runCommand)
   .parse(process.argv);

@@ -20,7 +20,7 @@ export const signac = program
   .command("test [options]", "tests a smart contract inside Signac workspace", {
     executableFile: "./commands/signac-test",
   })
-  .command("add [options]", "add a smart contract inside Signac workspace", {
+  .command("add [arguments]", "add a smart contract inside Signac workspace", {
     executableFile: "./commands/signac-add",
   })
   .on("command:*", function(operands: string[]) {

@@ -9,7 +9,6 @@ do
     cd ../..
 done
 
-cd ../
 
 for i in "${packages[@]}"
 do

@@ -675,10 +675,10 @@
     "@babel/runtime" "^7.16.3"
     "@polkadot/x-global" "7.9.2"
 
-"@signac/error@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.3.tgz#0ec1246e50818ea5f92afd1b215b461e6cb641d2"
-  integrity sha512-MfWuuaEz8ZvVHIgDxmUKmBXN+sZsJOIGZd1FWpNSCdSysterSbYgIBo3Z19LSVJ22qIF6HnBBjSNdC8dsY/JVQ==
+"@signac/error@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.4.tgz#c47a30322f9fcf76bff51e0d27a5eda4bf0b2d9c"
+  integrity sha512-5MK2KGDxRZjFC3XDwVhhNPabzzgvfAio719CC2xRJc981CqBe80mpKXiQTLuwWT5ppHroXJZ0pvClU3TfHR4Ew==
   dependencies:
     extendable-error "^0.1.7"
 

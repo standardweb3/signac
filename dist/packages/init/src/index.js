@@ -14,7 +14,8 @@ const runCommand = async (project) => {
 	███████║██║╚██████╔╝██║ ╚████║██║  ██║╚██████╗
 	╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝                                            
 	`));
-    console.log(chalk_1.default.cyan(`🖼  Welcome to Signac v0.0.0 🎨`));
+    const version = await execute('signac --version');
+    console.log(chalk_1.default.cyan(`🖼  Welcome to Signac v${version.replace(/[\r\n]/gm, '')} 🎨`));
     inquirer_1.default
         .prompt([
         {
@@ -75,5 +76,23 @@ function addContract(project) {
         });
     });
 }
+const execute = async (command) => {
+    return new Promise((resolve, reject) => {
+        const exec = require("child_process").exec;
+        exec(command, function (error, stdout, stderr) {
+            if (error) {
+                reject(error);
+                return;
+            }
+            if (stderr) {
+                reject(stderr);
+                return;
+            }
+            else {
+                resolve(stdout);
+            }
+        });
+    });
+};
 exports.default = runCommand;
 //# sourceMappingURL=index.js.map

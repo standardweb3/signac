@@ -6,7 +6,7 @@ const program = new commander.Command();
 
 program
   .command("<contract> [options]")
-  .name("compile")
+  .name("test")
   .usage("[options]")
   .option("--features <features>", "Space or comma separated list of features to activate, or \"all\".")
   .option("--generate <artifacts>", "\nWhich build artifacts to generate. \n- `all`: Generate the Wasm, the metadata and a bundled `<name>.contract` file. \n\n- `code-only`: Only the Wasm is created, generation of metadata and a bundled\n`<name>.contract` file is skipped.\n\n- `check-only`: No artifacts produced: runs the `cargo check` command for the Wasm\ntarget, only checks for compilation errors.\n\n[default: all]\n[possible values: all, code-only, check-only]")
@@ -16,5 +16,5 @@ program
   .option("--verbose", "Use verbose output")
   .option("--skip-linting", "Skips linting checks during the build process")
   .description("compiles a contract in the workspace")
-  .action(mock)
+  .action(runCommand)
   .parse(process.argv);

@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/digitalnative/signac/issues"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc"
   },

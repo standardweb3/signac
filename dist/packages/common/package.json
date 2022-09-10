@@ -1,6 +1,6 @@
 {
   "name": "@signac/common",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Common library of functions and data types for Signac CLI",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",

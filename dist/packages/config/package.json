@@ -19,7 +19,7 @@
   "dependencies": {
     "@polkadot/util": "^7.0.1",
     "@polkadot/util-crypto": "^7.0.1",
-    "@signac/error": "0.0.3",
+    "@signac/error": "0.0.4",
     "@signac/events": "0.0.2",
     "configstore": "^4.0.0",
     "find-up": "^4.0.0",

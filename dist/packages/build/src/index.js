@@ -15,24 +15,24 @@ const runCommand = async (project) => {
             {
                 type: "list",
                 name: "choose-contract-cargo",
-                message: "📦 What contract cargo are you testing with?",
+                message: "📦 What contract cargo are you compiling with?",
                 choices: contracts,
             },
         ])
             .then(async (answers) => {
-            await testContract(contracts[answers]);
+            await buildContract(contracts[answers]);
         });
     }
     else if (contracts.includes(project)) {
-        await testContract(project);
+        await buildContract(project);
     }
     else {
         common_1.suggestCommand(project, contracts);
     }
 };
-function testContract(project) {
+function buildContract(project) {
     return new Promise((resolve, reject) => {
-        cp.spawn(`nx test ${project}`, {
+        cp.spawn(`nx build ${project}`, {
             shell: true,
             stdio: "inherit",
         })

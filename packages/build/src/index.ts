@@ -2,6 +2,7 @@ import * as cp from "child_process";
 import inquirer from "inquirer";
 import fs from "fs"; 
 import {suggestCommand} from "@signac/common"
+import SignacError from "@signac/error";
 
 const runCommand = async (project: any) => {
 	// get contract list
@@ -48,5 +49,9 @@ export default runCommand;
 
 export function getContracts(dir: string) {
 	// get listdir in the dir
-	return fs.readdirSync(dir, { withFileTypes: false });
+	try {
+		return fs.readdirSync(dir, { withFileTypes: false });
+	} catch(err) {
+		throw new SignacError(`Contract directory is not detected. \n ${err}`, 404)
+	}
 }

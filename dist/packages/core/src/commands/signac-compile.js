@@ -3,9 +3,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const commander_1 = tslib_1.__importDefault(require("commander"));
+const build_1 = tslib_1.__importDefault(require("@signac/build"));
 const program = new commander_1.default.Command();
-const mock = () => {
-};
 program
     .command("<contract> [options]")
     .name("compile")
@@ -18,6 +17,6 @@ program
     .option("--verbose", "Use verbose output")
     .option("--skip-linting", "Skips linting checks during the build process")
     .description("compiles a contract in the workspace")
-    .action(mock)
+    .action(build_1.default)
     .parse(process.argv);
 //# sourceMappingURL=signac-compile.js.map

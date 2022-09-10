@@ -4,6 +4,8 @@ import inquirer from "inquirer"
 
 const color = "#1890FF"
 
+
+
 const runCommand = async (project: string) => {
 	console.log(
 		chalk.hex(color)(`
@@ -15,7 +17,8 @@ const runCommand = async (project: string) => {
 	╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝                                            
 	`)
 	);
-	console.log(chalk.cyan(`🖼  Welcome to Signac v0.0.0 🎨`));
+	const version = await execute('signac --version');
+	console.log(chalk.cyan(`🖼  Welcome to Signac v${version.replace(/[\r\n]/gm, '')} 🎨`));
 	inquirer
   .prompt([
     {
@@ -75,5 +78,29 @@ function addContract(project: string) {
 	});
 }
 
-export default runCommand;
+const execute = async (command: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      const exec = require("child_process").exec;
+      exec(
+        command,
+        function (
+          error: Error,
+          stdout: string | Buffer,
+          stderr: string | Buffer
+        ) {
+          if (error) {
+            reject(error);
+            return;
+          }
+          if (stderr) {
+            reject(stderr);
+            return;
+          } else {
+            resolve(stdout);
+          }
+        }
+      );
+    });
+  };
 
+export default runCommand;
