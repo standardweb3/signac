@@ -1,6 +1,6 @@
 {
   "name": "@signac/core",
-  "version": "0.0.7",
+  "version": "0.0.17",
   "type": "commonjs",
   "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
@@ -34,7 +34,9 @@
   ],
   "dependencies": {
     "@signac/add-contract": "^0.0.0",
+    "@signac/build": "^0.0.0",
     "@signac/init": "^0.0.9",
+    "@signac/test": "^0.0.0",
     "@types/figlet": "^1.2.0",
     "@types/fs-extra": "^9.0.1",
     "@types/inquirer": "^9.0.1",
@@ -53,7 +55,7 @@
     "readline": "^1.3.0",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.19",
-    "string-similarity": "^4.0.2",
+    "string-similarity": "^4.0.4",
     "tslib": "^2.0.0",
     "typescript": "4.3.5",
     "util": "^0.12.3"
