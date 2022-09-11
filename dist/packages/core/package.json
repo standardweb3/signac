@@ -1,6 +1,6 @@
 {
   "name": "@signac/core",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "type": "commonjs",
   "description": "Core module for Lumen, a chain-agnostic oracle provider",
   "license": "Apache-2.0",
@@ -32,7 +32,7 @@
     "middleware"
   ],
   "dependencies": {
-    "@signac/add-contract": "^0.0.0",
+    "@signac/add-contract": "^0.0.5",
     "@signac/build": "^0.0.3",
     "@signac/init": "^0.0.22",
     "@signac/test": "^0.0.3",
