@@ -7,7 +7,7 @@ const build_1 = tslib_1.__importDefault(require("@signac/build"));
 const program = new commander_1.default.Command();
 program
     .command("<contract> [options]")
-    .name("compile")
+    .name("build")
     .usage("[options]")
     .option("--features <features>", "Space or comma separated list of features to activate, or \"all\".")
     .option("--generate <artifacts>", "\nWhich build artifacts to generate. \n- `all`: Generate the Wasm, the metadata and a bundled `<name>.contract` file. \n\n- `code-only`: Only the Wasm is created, generation of metadata and a bundled\n`<name>.contract` file is skipped.\n\n- `check-only`: No artifacts produced: runs the `cargo check` command for the Wasm\ntarget, only checks for compilation errors.\n\n[default: all]\n[possible values: all, code-only, check-only]")
@@ -19,4 +19,4 @@ program
     .description("compiles a contract in the workspace")
     .action(build_1.default)
     .parse(process.argv);
-//# sourceMappingURL=signac-compile.js.map
+//# sourceMappingURL=signac-build.js.map

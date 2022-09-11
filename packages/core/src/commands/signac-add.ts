@@ -5,17 +5,23 @@ import runCommand from "@signac/add-contract";
 import inquirer from "inquirer";
 const program = new commander.Command();
 
+type Projects = {
+    [key: string]: string
+}
 // project classfication array
-const projects = ["contract", "contract-ui"];
+const projects: Projects = {
+	'contract': "Add a smart contract",
+	"contract-ui": "Add a contract portal",
+};
 
 program
 	.command("<project> [name] [options]")
 	.name("add")
 	.usage("[options]")
 	.description("adds a component in the workspace")
-	.action(async (project, name) => {
-		if (projects.includes(project)) {
-			await addProject(projects.indexOf(project), name);
+	.action(async (project: string, name) => {
+		if (Object.keys(projects).includes(project)) {
+			await addProject(projects[project], name);
 		} else {
 			inquirer
 				.prompt([
@@ -35,12 +41,15 @@ program
 
 async function addProject(input: any, name: any) {
 	switch (input) {
-		case 0: {
+		case "Add a smart contract": {
 			await runCommand(name);
 			break;
 		}
-		case 1: {
+		case "Add a contract portal": {
+			// TODO: add generator in nxink for contract-ui
 			break;
 		}
+		default:
+			break;
 	}
 }

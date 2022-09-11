@@ -3,18 +3,18 @@
 use ink_lang as ink;
 
 #[ink::contract]
-mod <%= projectName %> {
+mod <%= projectName.replace(/-/g, "_") %> {
 
     /// Defines the storage of your contract.
     /// Add new fields to the below struct in order
     /// to add new static storage fields to your contract.
     #[ink(storage)]
-    pub struct <%= projectName.replace(/\w/, c => c.toUpperCase()) %> {
+    pub struct <%= projectName.replace(/-/g, "_").replace(/\w/, c => c.toUpperCase()) %> {
         /// Stores a single `bool` value on the storage.
         value: bool,
     }
 
-    impl <%= projectName.replace(/\w/, c => c.toUpperCase()) %> {
+    impl <%= projectName.replace(/-/g, "_").replace(/\w/, c => c.toUpperCase()) %> {
         /// Constructor that initializes the `bool` value to the given `init_value`.
         #[ink(constructor)]
         pub fn new(init_value: bool) -> Self {
@@ -58,17 +58,17 @@ mod <%= projectName %> {
         /// We test if the default constructor does its job.
         #[ink::test]
         fn default_works() {
-            let <%= projectName %> = <%= projectName.replace(/\w/, c => c.toUpperCase()) %>::default();
-            assert_eq!(<%= projectName %>.get(), false);
+            let <%= projectName.replace(/-/g, "_") %> = <%= projectName.replace(/-/g, "_").replace(/\w/, c => c.toUpperCase()) %>::default();
+            assert_eq!(<%= projectName.replace(/-/g, "_") %>.get(), false);
         }
 
         /// We test a simple use case of our contract.
         #[ink::test]
         fn it_works() {
-            let mut <%= projectName %> = <%= projectName.replace(/\w/, c => c.toUpperCase()) %>::new(false);
-            assert_eq!(<%= projectName %>.get(), false);
-            <%= projectName %>.flip();
-            assert_eq!(<%= projectName %>.get(), true);
+            let mut <%= projectName.replace(/-/g, "_") %> = <%= projectName.replace(/-/g, "_").replace(/\w/, c => c.toUpperCase()) %>::new(false);
+            assert_eq!(<%= projectName.replace(/-/g, "_") %>.get(), false);
+            <%= projectName.replace(/-/g, "_") %>.flip();
+            assert_eq!(<%= projectName.replace(/-/g, "_") %>.get(), true);
         }
     }
 }

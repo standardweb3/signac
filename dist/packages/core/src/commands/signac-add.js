@@ -6,15 +6,18 @@ const commander_1 = tslib_1.__importDefault(require("commander"));
 const add_contract_1 = tslib_1.__importDefault(require("@signac/add-contract"));
 const inquirer_1 = tslib_1.__importDefault(require("inquirer"));
 const program = new commander_1.default.Command();
-const projects = ["contract", "contract-ui"];
+const projects = {
+    'contract': "Add a smart contract",
+    "contract-ui": "Add a contract portal",
+};
 program
     .command("<project> [name] [options]")
     .name("add")
     .usage("[options]")
     .description("adds a component in the workspace")
     .action(async (project, name) => {
-    if (projects.includes(project)) {
-        await addProject(projects.indexOf(project), name);
+    if (Object.keys(projects).includes(project)) {
+        await addProject(projects[project], name);
     }
     else {
         inquirer_1.default
@@ -34,13 +37,15 @@ program
     .parse(process.argv);
 async function addProject(input, name) {
     switch (input) {
-        case 0: {
+        case "Add a smart contract": {
             await add_contract_1.default(name);
             break;
         }
-        case 1: {
+        case "Add a contract portal": {
             break;
         }
+        default:
+            break;
     }
 }
 //# sourceMappingURL=signac-add.js.map

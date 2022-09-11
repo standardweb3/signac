@@ -6,6 +6,7 @@ const runCommand = async (project: string) => {
 
 function addContract(project: string) {
 	// TODO: Add multiple generators to choose with inquirer
+	var project = (project === undefined) ? "" : project;
 	return new Promise<void>((resolve, reject) => {
 		cp.spawn(`nx generate nxink:ink ${project}`, {
 			shell: true,
@@ -20,4 +21,3 @@ function addContract(project: string) {
 }
 
 export default runCommand;
-

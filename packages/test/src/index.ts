@@ -3,6 +3,7 @@ import inquirer from "inquirer";
 import fs from "fs"; 
 import {suggestCommand} from "@signac/common"
 import SignacError from "@signac/error";
+import chalk from "chalk";
 
 const runCommand = async (project: any) => {
 	// get contract list
@@ -14,13 +15,13 @@ const runCommand = async (project: any) => {
 			.prompt([
 				{
 					type: "list",
-					name: "choose-contract-cargo",
+					name: "intent",
 					message: "📦 What contract cargo are you testing with?",
 					choices: contracts,
 				},
 			])
-			.then(async (answers: any) => {
-				await testContract(contracts[answers]);
+			.then(async (answer: any) => {
+				await testContract(answer.intent);
 			});
 	} // check input if it matches a contract
 	else if (contracts.includes(project)) {
@@ -52,6 +53,6 @@ export function getContracts(dir: string) {
 	try {
 		return fs.readdirSync(dir, { withFileTypes: false });
 	} catch(err) {
-		throw new SignacError(`Contract directory is not detected. \n ${err}`, 404)
+		throw new SignacError(chalk.red(`Contract directory is not detected at current working directory. \n`), -2)
 	}
 }

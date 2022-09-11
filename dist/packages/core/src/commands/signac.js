@@ -14,8 +14,8 @@ exports.signac = program
     .command("init [options]", "initializes Signac contract workspace", {
     executableFile: "./commands/signac-init",
 })
-    .command("compile [options]", "compiles a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-compile",
+    .command("build [options]", "compiles a smart contract inside Signac workspace", {
+    executableFile: "./commands/signac-build",
 })
     .command("test [options]", "tests a smart contract inside Signac workspace", {
     executableFile: "./commands/signac-test",

@@ -6,6 +6,7 @@ const runCommand = async (project) => {
     await addContract(project);
 };
 function addContract(project) {
+    var project = (project === undefined) ? "" : project;
     return new Promise((resolve, reject) => {
         cp.spawn(`nx generate nxink:ink ${project}`, {
             shell: true,

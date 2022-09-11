@@ -5,6 +5,7 @@ const cp = tslib_1.__importStar(require("child_process"));
 const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const inquirer_1 = tslib_1.__importDefault(require("inquirer"));
 const color = "#1890FF";
+const workspaceName = { "workspaceName": "" };
 const runCommand = async (project) => {
     console.log(chalk_1.default.hex(color)(`
 	███████╗██╗ ██████╗ ███╗   ██╗ █████╗  ██████╗
@@ -14,29 +15,37 @@ const runCommand = async (project) => {
 	███████║██║╚██████╔╝██║ ╚████║██║  ██║╚██████╗
 	╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝                                            
 	`));
-    const version = await execute('signac --version');
-    console.log(chalk_1.default.cyan(`🖼  Welcome to Signac v${version.replace(/[\r\n]/gm, '')} 🎨`));
+    const version = await execute("signac --version");
+    console.log(chalk_1.default.cyan(`🖼  Welcome to Signac v${version.replace(/[\r\n]/gm, "")} 🎨`));
     inquirer_1.default
         .prompt([
         {
-            type: 'list',
-            name: 'intent',
-            message: 'What do you want to do?',
-            choices: ['Create a ink! project', 'Create an empty workspace', 'Quit'],
+            type: "list",
+            name: "intent",
+            message: "What do you want to do?",
+            choices: [
+                "Create a workspace with a starter ink! contract",
+                "Create an empty workspace",
+                "Quit",
+            ],
         },
     ])
         .then(async (answers) => {
         switch (answers.intent) {
-            case 0: {
-                await runNx(project);
-                await addContract(project);
+            case "Create a workspace with a starter ink! contract": {
+                await askName(project);
+                await runNx(workspaceName["workspaceName"]);
+                await addContract(workspaceName["workspaceName"]);
+                await removeDefaultDirs(workspaceName["workspaceName"]);
                 break;
             }
-            case 1: {
-                await runNx(project);
+            case "Create an empty workspace": {
+                await askName(project);
+                await runNx(workspaceName["workspaceName"]);
+                await removeDefaultDirs(workspaceName["workspaceName"]);
                 break;
             }
-            case 2: {
+            case "Quit": {
                 break;
             }
             default: {
@@ -45,6 +54,24 @@ const runCommand = async (project) => {
         }
     });
 };
+function askName(project) {
+    return new Promise((resolve) => {
+        if (project !== undefined) {
+            workspaceName["workspaceName"] = project;
+        }
+        inquirer_1.default
+            .prompt([
+            {
+                name: "workspaceName",
+                message: "What name would you like to use for your workspace?",
+            },
+        ])
+            .then((answers) => {
+            workspaceName["workspaceName"] = answers.workspaceName;
+            resolve();
+        });
+    });
+}
 function runNx(project) {
     return new Promise((resolve, reject) => {
         cp.spawn(`npx create-nx-workspace ${project} --preset=nxink`, {
@@ -61,8 +88,25 @@ function runNx(project) {
     });
 }
 function addContract(project) {
+    const result = project === undefined ? "" : project;
     return new Promise((resolve, reject) => {
-        cp.spawn("nx generate nxink:ink my-ink-contract", {
+        cp.spawn("nx generate nxink:ink starter", {
+            cwd: `./${result}`,
+            shell: true,
+            stdio: "inherit",
+        })
+            .on("error", reject)
+            .on("close", code => {
+            if (code)
+                reject(new Error(`Cargo failed with exit code ${code}`));
+            else
+                resolve();
+        });
+    });
+}
+function removeDefaultDirs(project) {
+    return new Promise((resolve, reject) => {
+        cp.spawn("rm -rf libs && rm -rf apps", {
             cwd: `./${project}`,
             shell: true,
             stdio: "inherit",

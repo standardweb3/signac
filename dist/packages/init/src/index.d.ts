@@ -1,2 +1,2 @@
-declare const runCommand: (project: string) => Promise<void>;
+declare const runCommand: (project: any) => Promise<void>;
 export default runCommand;

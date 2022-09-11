@@ -14,13 +14,13 @@ const runCommand = async (project) => {
             .prompt([
             {
                 type: "list",
-                name: "choose-contract-cargo",
+                name: "intent",
                 message: "📦 What contract cargo are you compiling with?",
                 choices: contracts,
             },
         ])
-            .then(async (answers) => {
-            await buildContract(contracts[answers]);
+            .then(async (answer) => {
+            await buildContract(answer.intent);
         });
     }
     else if (contracts.includes(project)) {
