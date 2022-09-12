@@ -86,8 +86,8 @@ function parseCargoArgs(opts, ctx) {
         case "test":
             args.push("test");
             break;
-        case "lint":
-            args.push("lint");
+        case "check":
+            args.push("check");
             break;
         default: {
             if (ctx.targetName == null) {
@@ -115,9 +115,19 @@ function parseCargoArgs(opts, ctx) {
         }
     }
     if (opts.verbose)
-        args.push("-v");
+        args.push("--verbose");
     if (opts.offline)
         args.push("--offline");
+    if (opts.release)
+        args.push("--release");
+    if (opts['output-json'])
+        args.push("--output-json");
+    if (opts.quiet)
+        args.push("--quiet");
+    if (opts['skip-linting'])
+        args.push("--skip-linting");
+    if (opts.generate)
+        args.push("--generate", opts.generate);
     return args;
 }
 exports.parseCargoArgs = parseCargoArgs;

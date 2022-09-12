@@ -7,6 +7,7 @@ const inquirer_1 = tslib_1.__importDefault(require("inquirer"));
 const fs_1 = tslib_1.__importDefault(require("fs"));
 const common_1 = require("@signac/common");
 const error_1 = tslib_1.__importDefault(require("@signac/error"));
+const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const runCommand = async (project) => {
     let contracts = getContracts("./contracts");
     if (project === undefined) {
@@ -51,7 +52,7 @@ function getContracts(dir) {
         return fs_1.default.readdirSync(dir, { withFileTypes: false });
     }
     catch (err) {
-        throw new error_1.default(`Contract directory is not detected. \n ${err}`, 404);
+        throw new error_1.default(chalk_1.default.red(`Contract directory is not detected at current working directory. \n`), -2);
     }
 }
 exports.getContracts = getContracts;

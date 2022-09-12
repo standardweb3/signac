@@ -5,12 +5,28 @@ import {suggestCommand} from "@signac/common"
 import SignacError from "@signac/error";
 import chalk from "chalk";
 
-const runCommand = async (project: any) => {
+const runCommand = async (contract: any, options: any) => {
 	// get contract list
 	let contracts = getContracts("./contracts");
-	// check if project is null
-	if (project === undefined) {
-		// ask for project
+	let args: string[] = []
+	if (options.features) {
+		if (options.features === "all") {
+			args.push("--all-features");
+		} else {
+			args.push("--features", options.features);
+		}
+	}
+	if (options.verbose) args.push("--verbose");
+	if (options.offline) args.push("--offline");
+	if (options.release) args.push("--release");
+	if (options['output-json']) args.push("--output-json")
+	if (options.quiet) args.push("--quiet")
+	if (options['skip-linting']) args.push("--skip-linting")
+	if (options.generate) args.push("--generate", options.generate)
+
+	// check if contract is null
+	if (contract === undefined) {
+		// ask for contract
 		inquirer
 			.prompt([
 				{
@@ -21,20 +37,20 @@ const runCommand = async (project: any) => {
 				},
 			])
 			.then(async (answer: any) => {
-				await buildContract(answer.intent);
+				await buildContract(answer.intent, args);
 			});
 	} // check input if it matches a contract
-	else if (contracts.includes(project)) {
-		await buildContract(project);
+	else if (contracts.includes(contract)) {
+		await buildContract(contract, args);
 	} else {
-		suggestCommand(project, contracts);
+		suggestCommand(contract, contracts);
 	}
 };
 
-function buildContract(project: any) {
+function buildContract(contract: any, options: any) {
 	// TODO: Add multiple generators to choose with compiler
 	return new Promise<void>((resolve, reject) => {
-		cp.spawn(`nx build ${project}`, {
+		cp.spawn(`nx build ${contract}`, options,{
 			shell: true,
 			stdio: "inherit",
 		})
