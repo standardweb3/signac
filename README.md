@@ -1,4 +1,4 @@
-![](./media/signac_logo.png)
+![](https://raw.githubusercontent.com/standardweb3/signac/main/media/signac_logo.png)
 
 ---
 ![Proudly built for Ink!](https://raw.githubusercontent.com/paritytech/ink/bb4104ec423c34ff863d8d2eb619f10f4962b570/.images/built-for-ink.svg)
