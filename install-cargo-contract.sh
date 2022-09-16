@@ -1,5 +1,6 @@
-#  Install Cargo contract
+# Detect System
 echo "Detected System: $OSTYPE"
+# Install cargo-contract
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Arch Linux
     if [ -f "/etc/arch-release" ]; then
