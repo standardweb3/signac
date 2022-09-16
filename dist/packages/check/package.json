@@ -1,6 +1,6 @@
 {
-  "name": "@signac/build",
-  "description": "Builds a contract in Signac workspace",
+  "name": "@signac/check",
+  "description": "Checks if a contract builds as a Wasm contract in Signac workspace",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",
   "homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/core#readme",

@@ -256,10 +256,22 @@
     chalk "^4.1.0"
     inquirer "^7.3.3"
 
-"@signac/build@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@signac/build/-/build-0.0.3.tgz#f00ff31ec3eaf6843a29b33fd0add0576416c5b3"
-  integrity sha512-/2BSCKF2UY9/OZdHIQ5KRlUcjFRUOnSTaglRgUuC/5EUm1uXf8+15Mmawrv6HZAmPHda5eiNlC+zfytJVIZZZg==
+"@signac/build@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@signac/build/-/build-0.0.4.tgz#f732729c9c511580eb02c97f2b56c2524534f2f6"
+  integrity sha512-uJPbTcpYWPPaYFOn7O0MKU4Lz4TpLTJK3R6XeaRMilWnLVOuTRhbejiP+ezoSqZI92Mq7TOEe7aD9u4qZVzkpQ==
+  dependencies:
+    "@signac/common" "^0.0.1"
+    "@signac/error" "0.0.4"
+    "@signac/events" "0.0.2"
+    "@types/inquirer" "^9.0.1"
+    chalk "^4.1.0"
+    inquirer "^7.3.3"
+
+"@signac/check@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@signac/check/-/check-0.0.0.tgz#ea5181361b828122c116f2caadf5fab7d7511953"
+  integrity sha512-baZECnd75D1b4Bd5Hemce2Mm2ur96Rt8QBLQVTzzpH8Ma4+vjq52qmGrcHHKSFY426tzJVSVJkbrAhFIW8zQcQ==
   dependencies:
     "@signac/common" "^0.0.1"
     "@signac/error" "0.0.4"

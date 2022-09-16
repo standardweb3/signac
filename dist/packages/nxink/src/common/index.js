@@ -83,11 +83,11 @@ function parseCargoArgs(opts, ctx) {
         case "build":
             args.push("build");
             break;
+        case "ci":
+            args.push("check");
+            break;
         case "test":
             args.push("test");
-            break;
-        case "check":
-            args.push("check");
             break;
         default: {
             if (ctx.targetName == null) {

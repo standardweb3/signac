@@ -11,6 +11,11 @@
 			"schema": "./src/executors/test/schema.json",
 			"description": "Run unit tests"
 		},
+		"ci": {
+			"implementation": "./src/executors/ci/executor",
+			"schema": "./src/executors/ci/schema.json",
+			"description": "Checks if the code builds as Wasm; does not output any `<name>.contract` artifact to the target"
+		},
 		"clippy": {
 			"implementation": "./src/executors/clippy/executor",
 			"schema": "./src/executors/clippy/schema.json",

@@ -19,9 +19,9 @@ const runCommand = async (contract: any, options: any) => {
 	if (options.verbose) args.push("--verbose");
 	if (options.offline) args.push("--offline");
 	if (options.release) args.push("--release");
-	if (options['output-json']) args.push("--output-json")
+	if (options.outputJson) args.push("--output-json")
 	if (options.quiet) args.push("--quiet")
-	if (options['skip-linting']) args.push("--skip-linting")
+	if (options.skipLinting) args.push("--skip-linting")
 	if (options.generate) args.push("--generate", options.generate)
 
 	// check if contract is null
@@ -71,3 +71,5 @@ export function getContracts(dir: string) {
 		throw new SignacError(chalk.red(`Contract directory is not detected at current working directory. \n`), -2)
 	}
 }
+
+
