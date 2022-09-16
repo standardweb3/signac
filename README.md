@@ -10,7 +10,7 @@
 ## Getting started
 
 - :book: Try quickstart tutorial for Ink! smart contract development in [documentation]()
-- :question: Ask question in our [Discord]()
+- :question: Ask question in our [Discord](https://discord.gg/v2HeWgsfhz)
 
 ## Prerequisites
 
