@@ -43,7 +43,7 @@
     "@types/node": "^14.0.14",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
-    "commander": "^5.1.0",
+    "commander": "^9.4.0",
     "config": "^3.3.1",
     "figlet": "^1.4.0",
     "fs-extra": "^9.0.1",

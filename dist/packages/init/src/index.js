@@ -24,15 +24,15 @@ const runCommand = async (project) => {
             name: "intent",
             message: "What do you want to do?",
             choices: [
-                "Create a workspace with a starter ink! contract",
-                "Create an empty workspace",
+                "Create a workspace with an ink! contract",
+                "Create an empty workspace with signac.config.js",
                 "Quit",
             ],
         },
     ])
         .then(async (answers) => {
         switch (answers.intent) {
-            case "Create a workspace with a starter ink! contract": {
+            case "Create an ink! workspace": {
                 await askName(project);
                 await runNx(workspaceName["workspaceName"]);
                 await addContract(workspaceName["workspaceName"]);
@@ -90,7 +90,7 @@ function runNx(project) {
 function addContract(project) {
     const result = project === undefined ? "" : project;
     return new Promise((resolve, reject) => {
-        cp.spawn("nx generate nxink:ink starter", {
+        cp.spawn("nx generate nxink:ink flipper", {
             cwd: `./${result}`,
             shell: true,
             stdio: "inherit",

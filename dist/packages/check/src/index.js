@@ -27,7 +27,7 @@ const runCommand = async (contract, options) => {
             {
                 type: "list",
                 name: "intent",
-                message: "📦 What contract cargo are you compiling with?",
+                message: "📦 Which contract cargo are you compiling with?",
                 choices: contracts,
             },
         ])

@@ -12,7 +12,6 @@
 		"events": "packages/events",
 		"common": "packages/common",
 		"nxink": "packages/nxink",
-		"nxink-e2e": "e2e/nxink-e2e",
-		"signac-e2e": "e2e/signac-e2e"
+		"nxink-e2e": "e2e/nxink-e2e"
 	}
 }

@@ -25,11 +25,11 @@ const runCommand = async (contract, options) => {
         args.push("--offline");
     if (options.release)
         args.push("--release");
-    if (options['output-json'])
+    if (options.outputJson)
         args.push("--output-json");
     if (options.quiet)
         args.push("--quiet");
-    if (options['skip-linting'])
+    if (options.skipLinting)
         args.push("--skip-linting");
     if (options.generate)
         args.push("--generate", options.generate);
@@ -39,7 +39,7 @@ const runCommand = async (contract, options) => {
             {
                 type: "list",
                 name: "intent",
-                message: "📦 What contract cargo are you compiling with?",
+                message: "📦 Which contract cargo are you compiling with?",
                 choices: contracts,
             },
         ])

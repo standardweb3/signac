@@ -17,9 +17,6 @@ exports.signac = program
     .command("build [options]", "compiles a smart contract inside Signac workspace", {
     executableFile: "./commands/signac-build",
 })
-    .command("check [options]", "checks if a smart contract code builds as Wasm contract inside Signac workspace", {
-    executableFile: "./commands/signac-check",
-})
     .command("test [options]", "tests a smart contract inside Signac workspace", {
     executableFile: "./commands/signac-test",
 })

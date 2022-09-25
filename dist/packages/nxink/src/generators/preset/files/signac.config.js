@@ -9,7 +9,7 @@ module.exports = {
 	networks: {
 		local: {
       // RPC url address
-			url: "wss://localhost:9650",
+			url: "wss://localhost:9945",
       // Type definitions to import
 			typedef: undefined,
 			// List of private key seeds, Recommended: use dotenv to bring the keys. Never expose this in public
@@ -18,7 +18,7 @@ module.exports = {
 			],
 		},
 		mainnet: {
-			url: "wss://localhost:9650",
+			url: "wss://localhost:9945",
 			typedef: undefined,
 			accounts: [],
 		},
