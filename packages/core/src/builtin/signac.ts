@@ -11,23 +11,25 @@ export const signac = program
   )
   .name("signac")
   .usage("<command> [arguments]")
+  // built-in commands
   .command("init [options]", "initializes Signac contract workspace", {
-    executableFile: "./commands/signac-init",
+    executableFile: "./builtin/signac-init",
   })
   .command("build [options]", "compiles a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-build",
+    executableFile: "./builtin/signac-build",
   })
   .command("test [options]", "tests a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-test",
+    executableFile: "./builtin/signac-test",
   })
   .command("add [arguments]", "add a smart contract inside Signac workspace", {
-    executableFile: "./commands/signac-add",
+    executableFile: "./builtin/signac-add",
   })
+  // other commands
   .on("command:*", function(operands: string[]) {
     showError(`error: unknown command '${operands[0]}'`);
     let availableCommands = program.commands.map((cmd: { name: () => any }) =>
-      cmd.name(),
+      cmd.name()
     );
-    suggestCommand(operands[0], availableCommands);
+    suggestCommand(operands[0], availableCommands.push("task"));
     process.exitCode = 1;
   });

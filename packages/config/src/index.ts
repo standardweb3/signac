@@ -1,7 +1,8 @@
 import "source-map-support/register";
 import { EventManager } from "@signac/events";
-import  SignacError  from "@signac/error";
+import SignacError from "@signac/error";
 import validate from "validate.js";
+import findUp from "find-up";
 const fs = require("fs");
 
 var keyConstraints = {
@@ -35,7 +36,10 @@ var networkConstraints = {
 const checkValid = (data: any, constraints: any) => {
 	let result = validate(data, constraints);
 	if (result !== undefined) {
-		throw new SignacError(`Configuration Error: ${JSON.stringify(result, null, 2)}`, 400);
+		throw new SignacError(
+			`Configuration Error: ${JSON.stringify(result, null, 2)}`,
+			400
+		);
 	}
 };
 
@@ -69,18 +73,6 @@ const validateConifg = (config: any) => {
 	});
 };
 
-
-var constraints = {
-	"rust": {
-	  presence: false
-	},
-	"networks": {
-		presence: true,
-		pattern: "^[0-9]+ .+$",
-		message: "^The street for the shipping address must be a valid street name"
-	}
-  };
-
 class SignacConfig {
 	[key: string]: any;
 
@@ -92,15 +84,25 @@ class SignacConfig {
 			//file exists
 			// load config file
 			const config = require(dir);
+			validateConifg(this)
 			for (const [key, value] of Object.entries(config)) {
 				this[key] = value;
 			}
-			validateConifg(this);
 		} else {
-			throw new SignacError(
-				"signac-config.js does not exist in current working directory",
-				404
-			);
+			// Find the closest signac.config.js file
+			const path = findUp.sync("signac.config.js");
+			if (path) {
+				const config = require(dir);
+				validateConifg(this);
+				for (const [key, value] of Object.entries(config)) {
+					this[key] = value;
+				}
+			} else {
+				throw new SignacError(
+					"signac-config.js does not exist in your current working directory",
+					404
+				);
+			}
 		}
 	}
 
