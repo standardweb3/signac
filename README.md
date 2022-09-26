@@ -6,7 +6,7 @@
 ![Proudly built for Ink!](https://raw.githubusercontent.com/paritytech/ink/bb4104ec423c34ff863d8d2eb619f10f4962b570/.images/built-for-ink.svg)
 
 
-*Signac is a development environment to compile, deploy, test, and debug your Polkadot software. Get ink! contract deployed in multichain ecosystem.*
+*Signac is a development environment to compile, deploy, test, and debug your unstoppable apps. Get ink! contract deployed in unstoppable app ecosystem.*
 
 
 ## Getting started
