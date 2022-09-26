@@ -7,7 +7,7 @@ import * as pjson from "../../package.json"
 export const signac = program
   .version(pjson.version)
   .description(
-    "a nascent Ink! smart contract framework for rust developers",
+    "a nascent smart contract framework for unstoppable app developers",
   )
   .name("signac")
   .usage("<command> [arguments]")
