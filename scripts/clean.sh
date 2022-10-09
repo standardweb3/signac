@@ -8,3 +8,5 @@ do
     rm -rf node_modules
     cd ../..
 done
+
+rm -rf dist
