@@ -5,7 +5,7 @@ const cp = tslib_1.__importStar(require("child_process"));
 const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const inquirer_1 = tslib_1.__importDefault(require("inquirer"));
 const color = "#1890FF";
-const workspaceName = { "workspaceName": "" };
+const workspaceName = { workspaceName: "" };
 const runCommand = async (project) => {
     console.log(chalk_1.default.hex(color)(`
 	███████╗██╗ ██████╗ ███╗   ██╗ █████╗  ██████╗
@@ -26,6 +26,7 @@ const runCommand = async (project) => {
             choices: [
                 "Create a workspace with an ink! contract",
                 "Create an empty workspace with signac.config.js",
+                "Launch the contract portal to deploy smart contracts",
                 "Quit",
             ],
         },
@@ -45,6 +46,10 @@ const runCommand = async (project) => {
                 await removeDefaultDirs(workspaceName["workspaceName"]);
                 break;
             }
+            case "Open up the contract portal to deploy": {
+                await open("https://contract.standard.tech");
+                break;
+            }
             case "Quit": {
                 break;
             }
@@ -55,7 +60,7 @@ const runCommand = async (project) => {
     });
 };
 function askName(project) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         if (project !== undefined) {
             workspaceName["workspaceName"] = project;
         }

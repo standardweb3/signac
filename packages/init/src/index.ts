@@ -4,7 +4,7 @@ import inquirer from "inquirer";
 
 const color = "#1890FF";
 
-const workspaceName = {"workspaceName": ""}
+const workspaceName = { workspaceName: "" };
 
 const runCommand = async (project: any) => {
 	console.log(
@@ -30,6 +30,7 @@ const runCommand = async (project: any) => {
 				choices: [
 					"Create a workspace with an ink! contract",
 					"Create an empty workspace with signac.config.js",
+					"Launch the contract portal to deploy smart contracts",
 					"Quit",
 				],
 			},
@@ -37,16 +38,20 @@ const runCommand = async (project: any) => {
 		.then(async (answers: any) => {
 			switch (answers.intent) {
 				case "Create an ink! workspace": {
-					await askName(project)
+					await askName(project);
 					await runNx(workspaceName["workspaceName"]);
 					await addContract(workspaceName["workspaceName"]);
 					await removeDefaultDirs(workspaceName["workspaceName"]);
 					break;
 				}
 				case "Create an empty workspace": {
-					await askName(project)
+					await askName(project);
 					await runNx(workspaceName["workspaceName"]);
 					await removeDefaultDirs(workspaceName["workspaceName"]);
+					break;
+				}
+				case "Open up the contract portal to deploy": {
+					await open("https://contract.standard.tech");
 					break;
 				}
 				case "Quit": {
@@ -59,24 +64,23 @@ const runCommand = async (project: any) => {
 		});
 };
 
-
 function askName(project: string | undefined) {
-    return new Promise<void>((resolve) => {
-    if (project !== undefined) {
-        workspaceName["workspaceName"] = project;
-    }
-    inquirer
-        .prompt([
-        {
-            name: "workspaceName",
-            message: "What name would you like to use for your workspace?",
-        },
-    ])
-        .then((answers: { workspaceName: string; }) => {
-        workspaceName["workspaceName"] = answers.workspaceName;
-        resolve()
-    });
-})
+	return new Promise<void>(resolve => {
+		if (project !== undefined) {
+			workspaceName["workspaceName"] = project;
+		}
+		inquirer
+			.prompt([
+				{
+					name: "workspaceName",
+					message: "What name would you like to use for your workspace?",
+				},
+			])
+			.then((answers: { workspaceName: string }) => {
+				workspaceName["workspaceName"] = answers.workspaceName;
+				resolve();
+			});
+	});
 }
 
 function runNx(project: string) {
