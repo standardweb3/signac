@@ -1,0 +1,40 @@
+{
+  "name": "@signac/add-contract",
+  "description": "Adds contract to signac workspace",
+  "license": "Apache-2.0",
+  "author": "Hyungsuk Kang <hskang9@gmail.com>",
+  "homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/core#readme",
+  "repository": "https://github.com/digitalnativeinc/signac/tree/master/packages/core",
+  "bugs": {
+    "url": "https://github.com/digitalnativeinc/signac/issues"
+  },
+  "version": "0.0.7",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts",
+    "audit": "npm_config_yes=true npx yarn-audit-fix"
+  },
+  "types": "src/index.d.ts",
+  "dependencies": {
+    "@signac/error": "0.0.4",
+    "@signac/events": "0.0.2",
+    "@types/inquirer": "^9.0.1",
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "sinon": "9.0.2",
+    "ts-node": "8.10.2",
+    "typescript": "4.3.5",
+    "validate.js": "^0.13.1"
+  },
+  "keywords": [
+    "cli",
+    "middleware"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "typings": "./src/index.d.ts"
+}
