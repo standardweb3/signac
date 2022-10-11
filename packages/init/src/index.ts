@@ -1,6 +1,7 @@
 import * as cp from "child_process";
 import chalk from "chalk";
 import inquirer from "inquirer";
+import open from "open"
 
 const color = "#1890FF";
 
@@ -50,7 +51,7 @@ const runCommand = async (project: any) => {
 					await removeDefaultDirs(workspaceName["workspaceName"]);
 					break;
 				}
-				case "Open up the contract portal to deploy": {
+				case "Launch the contract portal to deploy smart contracts": {
 					await open("https://contract.standard.tech");
 					break;
 				}

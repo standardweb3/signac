@@ -181,3 +181,37 @@ export function parseCargoArgs(opts: CargoOptions, ctx: ExecutorContext): string
 
 	return args;
 }
+
+export function runCargoContract(args: string[], ctx: ExecutorContext) {
+	console.log(chalk.dim(`> cargo ${args.join(" ")}`));
+
+	return new Promise<void>((resolve, reject) => {
+		cp.spawn("cargo", args, {
+			cwd: `./contracts/${ctx.projectName}`,
+			shell: true,
+			stdio: "inherit",
+		})
+			.on("error", reject)
+			.on("close", code => {
+				if (code) reject(new Error(`Cargo failed with exit code ${code}`));
+				else resolve();
+			});
+	});
+}
+
+export function runCargo(args: string[], ctx: ExecutorContext) {
+	console.log(chalk.dim(`> cargo ${args.join(" ")}`));
+
+	return new Promise<void>((resolve, reject) => {
+		cp.spawn("cargo", args, {
+			cwd: ctx.root,
+			shell: true,
+			stdio: "inherit",
+		})
+			.on("error", reject)
+			.on("close", code => {
+				if (code) reject(new Error(`Cargo failed with exit code ${code}`));
+				else resolve();
+			});
+	});
+}
