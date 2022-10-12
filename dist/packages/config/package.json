@@ -3,10 +3,10 @@
   "description": "Utility for interacting with houston-config.js files",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",
-  "homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/config#readme",
-  "repository": "https://github.com/digitalnativeinc/signac/tree/master/packages/config",
+  "homepage": "https://github.com/standardweb3/signac/tree/master/packages/config#readme",
+  "repository": "https://github.com/standardweb3/signac/tree/master/packages/config",
   "bugs": {
-    "url": "https://github.com/digitalnativeinc/signac/issues"
+    "url": "https://github.com/standardweb3/signac/issues"
   },
   "version": "0.0.2",
   "main": "src/index.js",

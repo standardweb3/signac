@@ -5,10 +5,10 @@
 	"description": "Core module for Lumen, a chain-agnostic oracle provider",
 	"license": "Apache-2.0",
 	"author": "Hyungsuk Kang <hskang9@gmail.com>",
-	"homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/core#readme",
-	"repository": "https://github.com/digitalnativeinc/signac/tree/master/packages/core",
+	"homepage": "https://github.com/standardweb3/signac/tree/master/packages/core#readme",
+	"repository": "https://github.com/standardweb3/signac/tree/master/packages/core",
 	"bugs": {
-		"url": "https://github.com/digitalnativeinc/signac/issues"
+		"url": "https://github.com/standardweb3/signac/issues"
 	},
 	"main": "src/index.js",
 	"bin": {

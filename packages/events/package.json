@@ -4,10 +4,10 @@
 	"description": "Event emitter component for Signac",
 	"license": "MIT",
 	"author": "Hyungsuk Kang <hskang9@gmail.com>",
-	"homepage": "https://github.com/digitalnativeinc/signac/tree/master/packages/events#readme",
-	"repository": "https://github.com/digitalnativeinc/signac/tree/master/packages/events",
+	"homepage": "https://github.com/standardweb3/signac/tree/master/packages/events#readme",
+	"repository": "https://github.com/standardweb3/signac/tree/master/packages/events",
 	"bugs": {
-		"url": "https://github.com/digitalnativeinc/signac/issues"
+		"url": "https://github.com/standardweb3/signac/issues"
 	},
 	"main": "src/index.js",
 	"scripts": {

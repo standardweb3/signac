@@ -7,7 +7,7 @@
   "executors": "./executors.json",
   "repository": {
     "type": "git",
-    "url": "https://github.com/digitalnativeinc/signac/packages/nxink"
+    "url": "https://github.com/standardweb3/signac/packages/nxink"
   },
   "author": {
     "name": "Hyungusk Kang",
