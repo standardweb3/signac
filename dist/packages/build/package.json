@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/standardweb3/signac/issues"
   },
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "src/index.js",
   "scripts": {
     "build": "tsc",
@@ -17,7 +17,7 @@
   },
   "types": "src/index.d.ts",
   "dependencies": {
-    "@signac/common": "^0.0.1",
+    "@signac/common": "^0.0.5",
     "@signac/error": "0.0.4",
     "@types/inquirer": "^9.0.1",
     "chalk": "^4.1.0",
