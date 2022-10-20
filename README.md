@@ -24,7 +24,7 @@
 
 ```bash
 yarn bootstrap
-node ./dist/package/core/src/index.js --help
+node ./dist/packages/core/src/index.js --help
 ```
 
 ## Architecture Overview
