@@ -18,7 +18,7 @@
 
 - :gear: [NodeJS](https://nodejs.org/) 
 - :crab: [Rust](https://www.rust-lang.org/)
-- :toolbox: [Yarn](https://yarnpkg.com/)/[Nx](https://nx.dev)/[Cargo Contract](https://github.com/paritytech/cargo-contract)
+- 🧰 [Yarn](https://yarnpkg.com/)/[Nx](https://nx.dev)/[Cargo Contract](https://github.com/paritytech/cargo-contract)
 
 ###### Developer Quickstart:
 
@@ -43,4 +43,4 @@ node ./dist/package/core/src/index.js --help
 
 ## Contributors
 
-Read our [contributors document](/CONTRIBUTING.md), [submit an issue](https://github.com/standardweb3/signac/issues/new/choose) or talk to us on our [Discord](https://discord.gg/qw9PZEavCC)!
+Read our [contributors document](https://github.com/standardweb3/signac/blob/main/CONTRIBUTING.md), [submit an issue](https://github.com/standardweb3/signac/issues/new/choose) or talk to us on our [Discord](https://discord.gg/qw9PZEavCC)!
