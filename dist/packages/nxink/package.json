@@ -1,6 +1,6 @@
 {
-  "name": "@signac/nxink",
-  "version": "0.0.1",
+  "name": "nxink",
+  "version": "0.0.20",
   "license": "MIT",
   "main": "src/index.js",
   "generators": "./generators.json",
