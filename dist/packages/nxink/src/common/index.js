@@ -102,7 +102,8 @@ function parseCargoArgs(opts, ctx) {
         ctx.workspace.projects[ctx.projectName].projectType === "application") {
         args.push("--bin");
     }
-    // args.push(ctx.projectName);
+    // remove including project name for cargo-contract as it does not support workspace environment
+    //args.push(ctx.projectName);
     if (opts.features) {
         if (opts.features === "all") {
             args.push("--all-features");
