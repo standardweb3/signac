@@ -26,7 +26,6 @@ function addFiles(host, options) {
     nrwl.generateFiles(host, path.join(__dirname, "files"), ".", templateOptions);
     let gitignore = (_b = (_a = host.read(".gitignore")) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : "";
     gitignore += "/target";
-    gitignore += "signac-config.js"
     host.write(".gitignore", gitignore);
 }
 function addPlugin(host, _) {

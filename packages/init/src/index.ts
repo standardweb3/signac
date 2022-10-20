@@ -7,6 +7,12 @@ const color = "#1890FF";
 
 const workspaceName = { workspaceName: "" };
 
+// Setup each command as variable to prevent mismatch in parsing choices
+const CREATE_WORKSPACE = "Create a workspace with an ink! contract"
+const CREATE_EMPTY = "Create an empty workspace with signac.config.js"
+const LAUNCH_CONTRACT_PORTAL = "Launch the contract portal to deploy smart contracts"
+const QUIT = "Quit";
+
 const runCommand = async (project: any) => {
 	console.log(
 		chalk.hex(color)(`
@@ -29,33 +35,33 @@ const runCommand = async (project: any) => {
 				name: "intent",
 				message: "What do you want to do?",
 				choices: [
-					"Create a workspace with an ink! contract",
-					"Create an empty workspace with signac.config.js",
-					"Launch the contract portal to deploy smart contracts",
-					"Quit",
+					CREATE_WORKSPACE,
+					CREATE_EMPTY,
+					LAUNCH_CONTRACT_PORTAL,
+					QUIT,
 				],
 			},
 		])
 		.then(async (answers: any) => {
 			switch (answers.intent) {
-				case "Create a workspace with an ink! contract": {
+				case CREATE_WORKSPACE: {
 					await askName(project);
 					await runNx(workspaceName["workspaceName"]);
 					await addContract(workspaceName["workspaceName"]);
 					await removeDefaultDirs(workspaceName["workspaceName"]);
 					break;
 				}
-				case "Create an empty workspace with signac.config.js": {
+				case CREATE_EMPTY: {
 					await askName(project);
 					await runNx(workspaceName["workspaceName"]);
 					await removeDefaultDirs(workspaceName["workspaceName"]);
 					break;
 				}
-				case "Launch the contract portal to deploy smart contracts": {
+				case LAUNCH_CONTRACT_PORTAL: {
 					await open("https://contract.standard.tech");
 					break;
 				}
-				case "Quit": {
+				case QUIT: {
 					break;
 				}
 				default: {

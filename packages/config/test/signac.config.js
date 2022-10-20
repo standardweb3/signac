@@ -8,7 +8,7 @@ module.exports = {
     },
     networks: {
       local: {
-        rpc: 'http://localhost:9933',
+        rpc: 'wss://localhost:9933',
         typedef: undefined,
         accounts: ["test test test test"]
       }

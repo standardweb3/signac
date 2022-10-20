@@ -1,7 +1,7 @@
 import "source-map-support/register";
 declare class SignacConfig {
     [key: string]: any;
-    constructor({ dir }: {
+    constructor({ dir }?: {
         dir?: string | undefined;
     });
     eventManagerOptions(config: SignacConfig): any;

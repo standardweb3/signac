@@ -22,9 +22,6 @@ var networkConstraints = {
 		presence: {
 			allowEmpty: false,
 		},
-		url: {
-			allowLocal: true,
-		},
 	},
 	typedef: {
 		presence: false,

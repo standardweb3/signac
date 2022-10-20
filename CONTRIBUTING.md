@@ -28,9 +28,13 @@ General task manager's entry point is located in `core` package. Core package is
 
 Nx plugin located in `nxink` packages defines available commands for each distinct contract in Signac workspace. It also defines generators that can create new kind of contract or ccomponent in Signac workspace. Codes in `generators` includes file for each contract to initialize on creation, and codes in `executors` includes commands that interacts with each contract in the Signac workspace.
 
-### Test Framework packages 
+### Test Framework
 
+To run each package of Signac, look up each directory in the `packages` folder of the root directory, then run command:
 
+```
+nx test <directory>
+```
 
 #### Hardhat task vs Signac task
 

@@ -18,10 +18,7 @@ var networkConstraints = {
 	rpc: {
 		presence: {
 			allowEmpty: false,
-		},
-		url: {
-			allowLocal: true,
-		},
+		}, 
 	},
 	typedef: {
 		presence: false,

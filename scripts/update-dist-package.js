@@ -4,7 +4,8 @@ var fs = require('fs');
 
 async function publish() {
     for (i in packages) {
-        const npmVersion = await execute(`curl -s \"https://registry.npmjs.org/@signac/${packages[i]}\" | \ python3 -c \"import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])\"`)
+		let url = packages[i] == "nxink" ? packages[i] : `@signac/${packages[i]}`
+        const npmVersion = await execute(`curl -s \"https://registry.npmjs.org/${url}\" | \ python3 -c \"import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])\"`)
         var packageJson = require(`../dist/packages/${packages[i]}/package.json`)
 		var nextVersion = incrementVersion(npmVersion)
         packageJson["version"] = nextVersion 
@@ -14,7 +15,7 @@ async function publish() {
         );
 		if(!["core","nxink"].includes(packages[i])) {
 			var corePackageJson = require(`../dist/packages/core/package.json`)
-			corePackageJson['dependencies'][`@signac/${packages[i]}`] =  nextVersion
+			corePackageJson['dependencies'][url] =  nextVersion
 			fs.writeFile (`./dist/packages/core/package.json`, JSON.stringify(corePackageJson), function(err) {
 				if (err) throw err;
 				}
