@@ -63,7 +63,7 @@ To contribute a doc-change proposal, use the following workflow:
 5. Work on only one change in one pull request.
 6. Follow these conventions:
 
-    1. Make your changes adhering to the [Signac Style Guide](STYLE-GUIDE.md) and the coding conventions described below. Generally, a commit serves a single purpose and differences should be easy to understand. Do not mix formatting fixes or code moves with actual code changes.
+    1. Make your changes adhering to the [Signac Style Guide](https://github.com/standardweb3/signac/blob/main/STYLE_GUIDE.md) and the coding conventions described below. Generally, a commit serves a single purpose and differences should be easy to understand. Do not mix formatting fixes or code moves with actual code changes.
     2. Commit your changes. Write a simple, straightforward commit message. To learn more, see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
     3. Push your changes to your remote fork.
     4. Create a PR on the Signac repository.
