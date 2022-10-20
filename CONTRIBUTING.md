@@ -36,6 +36,16 @@ To run each package of Signac, look up each directory in the `packages` folder o
 nx test <directory>
 ```
 
+To debug after editing the codebase in each package so that you can get your hands dirty, run `ts-node` installed in the package after running `yarn`.
+For example, assuming the testing package is a command, run in the root directory:
+
+```
+cd packages/core/src
+yarn
+npx ts-node index.ts
+```
+
+
 #### Hardhat task vs Signac task
 
 Hardhat's task has made its own domain-specific-language to execute certain task focused only on ethereum. This requires developers to understand its domain specific language to build plugins. Meanwhile, Signac's task is not bound to specific use case of the domain language. It is just a pure javascript extension of `commander.js` that implements simple CLI, in which it can be integrated with other libraries easily without going through domain language parser. 
