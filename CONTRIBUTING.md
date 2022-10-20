@@ -20,7 +20,7 @@ The first step is to find an issue you want to fix. To identify issues we think 
 
 If you find an existing issue that you want to work on or if you have a new issue to create, understand the workflow expected by maintainers of the Signac repository.
 
-### Understand Framework structure
+### Understand framework structure
 
 Signac consists of a task manager and its nx plugin packages that provides operating functions in nx monorepo project. Nx plugin(nxink) includes generators for setting up a each contract in monorepo and components for developing a dapp in ink! smart contract. Executors include commands that can be executed in nx for each distinct project in the monorepo. Other packages are parts to build a general task manager.
 
@@ -28,7 +28,7 @@ General task manager's entry point is located in `core` package. Core package is
 
 Nx plugin located in `nxink` packages defines available commands for each distinct contract in Signac workspace. It also defines generators that can create new kind of contract or ccomponent in Signac workspace. Codes in `generators` includes file for each contract to initialize on creation, and codes in `executors` includes commands that interacts with each contract in the Signac workspace.
 
-### Test Framework
+### Test framework codebase
 
 To run each package of Signac, look up each directory in the `packages` folder of the root directory, then run command:
 
@@ -50,7 +50,7 @@ npx ts-node index.ts
 
 Hardhat's task has made its own domain-specific-language to execute certain task focused only on ethereum. This requires developers to understand its domain specific language to build plugins. Meanwhile, Signac's task is not bound to specific use case of the domain language. It is just a pure javascript extension of `commander.js` that implements simple CLI, in which it can be integrated with other libraries easily without going through domain language parser. 
 
-### Propose Framework changes
+### Propose framework changes
 
 Signac requires everyone, without exception, to submit doc-change proposals by using a pull request (PR). PRs enable contributions from the community, easy testing, and straightforward peer review.
 
