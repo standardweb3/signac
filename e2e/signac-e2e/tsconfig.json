@@ -4,6 +4,7 @@
 	"include": [],
 	"compilerOptions": {
 		"composite": true,
+		"allowJs": true
 	},
 	"references": [
 		{

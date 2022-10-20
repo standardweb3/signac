@@ -43,14 +43,4 @@ node ./dist/package/core/src/index.js --help
 
 ## Contributors
 
-Read our [contributors document](/CONTRIBUTING.md), [submit an issue](https://github.com/standardweb3/signac/issues/new/choose) or talk to us on our [Discord](https://discord.gg/yjyvFRP)!
-
-## Meetings
-
-Weekly contributor meetings are public and announced on Discord. Feel free to check out our meeting notes and documents on [HackMD](https://hackmd.io/@wemeetagain/rJTEOdqPS/%2FXBzvaQgMTyyMJuToWAEDjw). Post-September 2021, meeting notes can be found on the [Lodestar Wiki Page](https://github.com/ChainSafe/lodestar/wiki).
-
-## Donations
-
-We are a local group of Toronto open-source developers. As such, all of our open-source work is funded by grants. We all take the time out of our hectic lives to contribute to the Ethereum ecosystem.
-If you want to donate, you can send us ETH at the following address: `lodestar.chainsafe.eth`
-
+Read our [contributors document](/CONTRIBUTING.md), [submit an issue](https://github.com/standardweb3/signac/issues/new/choose) or talk to us on our [Discord](https://discord.gg/qw9PZEavCC)!

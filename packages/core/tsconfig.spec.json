@@ -4,6 +4,7 @@
 		"outDir": "../../dist/out-tsc",
 		"module": "commonjs",
 		"types": ["jest", "node"],
+		"allowJs": true,
 		"composite": true,
 		"declaration": true
 	},
