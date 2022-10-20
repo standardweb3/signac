@@ -18,7 +18,7 @@ const runCommand = async (project: any) => {
 	╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝                                            
 	`)
 	);
-	const version = await execute("signac --version");
+	const version = await execute(`curl -s \"https://registry.npmjs.org/signac\" | \ python3 -c \"import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])\"`)
 	console.log(
 		chalk.cyan(`🖼  Welcome to Signac v${version.replace(/[\r\n]/gm, "")} 🎨`)
 	);
@@ -38,14 +38,14 @@ const runCommand = async (project: any) => {
 		])
 		.then(async (answers: any) => {
 			switch (answers.intent) {
-				case "Create an ink! workspace": {
+				case "Create a workspace with an ink! contract": {
 					await askName(project);
 					await runNx(workspaceName["workspaceName"]);
 					await addContract(workspaceName["workspaceName"]);
 					await removeDefaultDirs(workspaceName["workspaceName"]);
 					break;
 				}
-				case "Create an empty workspace": {
+				case "Create an empty workspace with signac.config.js": {
 					await askName(project);
 					await runNx(workspaceName["workspaceName"]);
 					await removeDefaultDirs(workspaceName["workspaceName"]);

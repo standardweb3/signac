@@ -17,8 +17,8 @@
 	},
 	"types": "src/index.d.ts",
 	"dependencies": {
-        "@signac/error": "0.0.4",
-		"@signac/common": "^0.0.1",
+		"@signac/common": "^0.0.5",
+		"@signac/error": "0.0.4",
 		"@types/inquirer": "^9.0.1",
 		"chalk": "^4.1.0",
 		"inquirer": "^7.3.3"

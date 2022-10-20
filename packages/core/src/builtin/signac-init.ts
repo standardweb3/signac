@@ -7,6 +7,6 @@ program
   .command("<project> [options]")
   .name("init")
   .usage("[options]")
-  .description("Initialize Ink! smart contract workspace")
+  .description("Initialize Signac smart contract workspace")
   .action(runCommand)
   .parse(process.argv);

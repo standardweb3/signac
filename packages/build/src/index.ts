@@ -1,7 +1,7 @@
 import * as cp from "child_process";
 import inquirer from "inquirer";
 import fs from "fs"; 
-import {suggestCommand} from "@signac/common"
+import {suggestCommand, getRootDir} from "@signac/common"
 import SignacError from "@signac/error";
 import chalk from "chalk";
 
@@ -48,9 +48,11 @@ const runCommand = async (contract: any, options: any) => {
 };
 
 function buildContract(contract: any, options: any) {
+	let cwd = getRootDir();
 	// TODO: Add multiple generators to choose with compiler
 	return new Promise<void>((resolve, reject) => {
 		cp.spawn(`nx build ${contract}`, options,{
+			cwd,
 			shell: true,
 			stdio: "inherit",
 		})

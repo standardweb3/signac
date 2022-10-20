@@ -9,7 +9,7 @@ program
     .command("<project> [options]")
     .name("init")
     .usage("[options]")
-    .description("Initialize Ink! smart contract workspace")
+    .description("Initialize Signac smart contract workspace")
     .action(init_1.default)
     .parse(process.argv);
 //# sourceMappingURL=signac-init.js.map

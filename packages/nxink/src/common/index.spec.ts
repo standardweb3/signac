@@ -11,9 +11,9 @@ describe("common utils", () => {
 			};
 			let args = parseCargoArgs(opts, ctx);
 			args.unshift("cargo");
-
+			// app name in args has been removed due to the fact that cargo-contract does not work in workspace environment
 			expect(args.join(" ")).toEqual(
-				"cargo contract build --bin test-app --target 86_64-pc-windows-gnu"
+				"cargo contract build --bin --target 86_64-pc-windows-gnu"
 			);
 		});
 	});

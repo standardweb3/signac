@@ -1,6 +1,6 @@
 {
   "name": "@signac/error",
-  "version": "0.0.6",
+  "version": "0.0.5",
   "description": "Simple module that allows native Error objects to be extended",
   "license": "Apache-2.0",
   "author": "Hyungsuk Kang <hskang9@gmail.com>",

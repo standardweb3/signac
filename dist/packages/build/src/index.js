@@ -55,8 +55,10 @@ const runCommand = async (contract, options) => {
     }
 };
 function buildContract(contract, options) {
+    let cwd = common_1.getRootDir();
     return new Promise((resolve, reject) => {
         cp.spawn(`nx build ${contract}`, options, {
+            cwd,
             shell: true,
             stdio: "inherit",
         })

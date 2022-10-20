@@ -348,37 +348,25 @@
     "@babel/runtime" "^7.16.3"
     "@polkadot/x-global" "7.9.2"
 
-"@signac/add-contract@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@signac/add-contract/-/add-contract-0.0.9.tgz#e53dc9104d3d099565ec6e44ee5f80a5094b8a79"
-  integrity sha512-F1TR8f2C6gzQ9/BPOhW7mpIEVUEPTjI3aAe/hqnDLIILAhCsf30LO49m2ZXlCQh5zfBv4eMkSuqJ/7M4Pl78IA==
+"@signac/add-contract@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@signac/add-contract/-/add-contract-0.0.10.tgz#eca276f3ba220d8642816e17d211915951e2d9ad"
+  integrity sha512-N65Nz2djP1mBd51FdxymT/PlJCBWgEUv8k1ocduFsfIwMuSVgxTSDqu7Pqn85QC+vul639+yDCi5YELo1viZVQ==
   dependencies:
-    "@signac/error" "0.0.4"
-    "@signac/events" "0.0.2"
     "@types/inquirer" "^9.0.1"
     chalk "^4.1.0"
     inquirer "^7.3.3"
 
-"@signac/build@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@signac/build/-/build-0.0.6.tgz#a478ec6abf4e8f81bc3167baae0638f9563c4640"
-  integrity sha512-0KqFlpPRQ7tymEyrAOX3iR6KmBsW3Xweyj34EeaklxthDRGUZ6sJH95VmdVgMO7hnahDWgGlxUZz7kILYvqOJA==
+"@signac/build@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@signac/build/-/build-0.0.8.tgz#edc7992879ff54ed30510a00e2eded93908c01d7"
+  integrity sha512-vJnDI29D7Ck7gfrS2gYno+1oUlDtNEEBymvcde894Nhi4DERsrziX8fL+0HAIoyAAETmcVRHefI2ES4LsgefUw==
   dependencies:
     "@signac/common" "^0.0.1"
     "@signac/error" "0.0.4"
-    "@signac/events" "0.0.2"
     "@types/inquirer" "^9.0.1"
     chalk "^4.1.0"
     inquirer "^7.3.3"
-
-"@signac/common@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@signac/common/-/common-0.0.3.tgz#0130ab6fa7178eac1b98fb98c6e9c3418f1c99c4"
-  integrity sha512-1TYmFPDyuhvv6T81fH9RkgDCmVm5ZoLNbxMRHv0dRkt1rk6tDSAEJJPWbHqUS02Fd/AZZorsD5VtAtvht80j0A==
-  dependencies:
-    extendable-error "^0.1.7"
-    kleur "^4.1.5"
-    string-similarity "^4.0.4"
 
 "@signac/common@^0.0.1":
   version "0.0.1"
@@ -389,14 +377,25 @@
     kleur "^4.1.5"
     string-similarity "^4.0.4"
 
-"@signac/config@0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@signac/config/-/config-0.0.0.tgz#6afc32799fac8b3e46eade23788f760a3c3b403d"
-  integrity sha512-TVQ2LrrDKzDz3J2a/yA0KSOWP3dkPiJo+fU/gHVpj7PqPNl0Nxm/ToCXP3r7w5WRtmkCnTrU5wTVRrVB//I1FQ==
+"@signac/common@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@signac/common/-/common-0.0.5.tgz#54a57bd0cd104b71d6e954f357c17acb797b0e2e"
+  integrity sha512-UXYqOkNjNLKAvzeI+KkskOibTwIPaHQGABTuoInP+26obux4v1DYmKe53x5d9dcIUJetNvfj3Q4I/hwwHslnIA==
+  dependencies:
+    "@signac/error" "^0.0.6"
+    extendable-error "^0.1.7"
+    find-up "^4.0.0"
+    kleur "^4.1.5"
+    string-similarity "^4.0.4"
+
+"@signac/config@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@signac/config/-/config-0.0.2.tgz#9daa954d2e72db89281e19b6dfa2bed8981eef42"
+  integrity sha512-xGheqb9l5nTyYACDQuDDaFc5voUB+r607rW2fPPKMiG0YKWAGqhKQVD4FdejK3FIpo2wWWjAE7JrmmVyjgjtDQ==
   dependencies:
     "@polkadot/util" "^7.0.1"
     "@polkadot/util-crypto" "^7.0.1"
-    "@signac/error" "0.0.3"
+    "@signac/error" "0.0.4"
     "@signac/events" "0.0.2"
     configstore "^4.0.0"
     find-up "^4.0.0"
@@ -405,17 +404,17 @@
     original-require "1.0.1"
     source-map-support "^0.5.19"
 
-"@signac/error@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.3.tgz#0ec1246e50818ea5f92afd1b215b461e6cb641d2"
-  integrity sha512-MfWuuaEz8ZvVHIgDxmUKmBXN+sZsJOIGZd1FWpNSCdSysterSbYgIBo3Z19LSVJ22qIF6HnBBjSNdC8dsY/JVQ==
-  dependencies:
-    extendable-error "^0.1.7"
-
 "@signac/error@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.4.tgz#c47a30322f9fcf76bff51e0d27a5eda4bf0b2d9c"
   integrity sha512-5MK2KGDxRZjFC3XDwVhhNPabzzgvfAio719CC2xRJc981CqBe80mpKXiQTLuwWT5ppHroXJZ0pvClU3TfHR4Ew==
+  dependencies:
+    extendable-error "^0.1.7"
+
+"@signac/error@0.0.6", "@signac/error@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.6.tgz#9471ac859ce66b6cb881664540f82d7fe1d11c79"
+  integrity sha512-LKSvgxJ5OfUyiGelhsuWODGrLdVvYQ1AgtAEbTqwVkcZWgF6u0G6g18DsQebDoh0BVZqEkbaA+GVH7JmE3qHHw==
   dependencies:
     extendable-error "^0.1.7"
 
@@ -433,25 +432,36 @@
     original-require "1.0.1"
     source-map-support "^0.5.19"
 
-"@signac/init@0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@signac/init/-/init-0.0.22.tgz#47ce4bf27e31a2b6db9b4280e6bf9b4cd16761a2"
-  integrity sha512-H3PTUKbukx0v8Q8r/wVDelbsA2CBEoCy/rvp2ThWdxXuonJwItnfGeoUVBGKSp6fdNSuDl5DlrXmqC0W3JtFtw==
+"@signac/events@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@signac/events/-/events-0.0.4.tgz#27c242fba36f2aa25d75897e39b0b16fe502b00a"
+  integrity sha512-1fMsW5lvY0AxgRVjekHCDwaJrp+zIW/5RmeDhOdjQF8dm9/AFZSBh7vp2OVzH0J+4awzlJ1zM39xTithS0D+yA==
   dependencies:
-    "@signac/error" "0.0.4"
-    "@signac/events" "0.0.2"
+    configstore "^5.0.1"
+    console-stamp "^3.0.3"
+    emittery "^0.7.1"
+    find-up "^2.1.0"
+    lodash.assignin "^4.2.0"
+    lodash.merge "^4.6.2"
+    original-require "1.0.1"
+    source-map-support "^0.5.19"
+
+"@signac/init@0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@signac/init/-/init-0.0.23.tgz#869899650459c93110b0b7204fcb0444b5a6ea3d"
+  integrity sha512-ctADtmb+QSH283ZRmhtvw6zfHKhVxHrQfmff+BsUu81sOCKcv4sUWFrFRF9xpm34uHjNJmXCQBqs9a/NEgFlaA==
+  dependencies:
     "@types/inquirer" "^9.0.1"
     chalk "^4.1.0"
     inquirer "^7.3.3"
+    open "^8.4.0"
 
-"@signac/test@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@signac/test/-/test-0.0.3.tgz#49367c883b052b4e07b76b8e0ab3d42585e4cdfc"
-  integrity sha512-8vpLGyGh75BEuPbdArpudUKPIpHqKlZ3rEdoJgqJWKqyRuK7qxBm84hacfczURd87Rgaxp7Gf+G9EE5k2uNv0g==
+"@signac/test@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@signac/test/-/test-0.0.4.tgz#1bdd956a4eedbf1f438117508a91876ba511fd5e"
+  integrity sha512-j64mz3aWx/l/SDmNWgocsZUqp62NKtPGSg+pC33WTJA/JlZjkMEQitKSUEX4fwQ8u5RpJ+GTxgx+c4nrLTeBeA==
   dependencies:
     "@signac/common" "^0.0.1"
-    "@signac/error" "0.0.4"
-    "@signac/events" "0.0.2"
     "@types/inquirer" "^9.0.1"
     chalk "^4.1.0"
     inquirer "^7.3.3"
@@ -1008,6 +1018,11 @@ default-require-extensions@^3.0.0:
   dependencies:
     strip-bom "^4.0.0"
 
+define-lazy-prop@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/define-lazy-prop/-/define-lazy-prop-2.0.0.tgz#3f7ae421129bcaaac9bc74905c98a0009ec9ee7f"
+  integrity sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==
+
 define-properties@^1.1.3, define-properties@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.4.tgz#0b14d7bd7fbeb2f3572c3a7eda80ea5d57fb05b1"
@@ -1519,6 +1534,11 @@ is-date-object@^1.0.1:
   dependencies:
     has-tostringtag "^1.0.0"
 
+is-docker@^2.0.0, is-docker@^2.1.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-2.2.1.tgz#33eeabe23cfe86f14bde4408a02c0cfb853acdaa"
+  integrity sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==
+
 is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
@@ -1631,6 +1651,13 @@ is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
+
+is-wsl@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
+  integrity sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==
+  dependencies:
+    is-docker "^2.0.0"
 
 isarray@0.0.1:
   version "0.0.1"
@@ -2012,6 +2039,15 @@ onetime@^5.1.0:
   integrity sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==
   dependencies:
     mimic-fn "^2.1.0"
+
+open@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/open/-/open-8.4.0.tgz#345321ae18f8138f82565a910fdc6b39e8c244f8"
+  integrity sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q==
+  dependencies:
+    define-lazy-prop "^2.0.0"
+    is-docker "^2.1.1"
+    is-wsl "^2.2.0"
 
 original-require@1.0.1:
   version "1.0.1"

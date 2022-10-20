@@ -161,8 +161,8 @@ export function parseCargoArgs(opts: CargoOptions, ctx: ExecutorContext): string
 	) {
 		args.push("--bin");
 	} 
-
-	// args.push(ctx.projectName);
+	// remove including project name for cargo-contract as it does not support workspace environment
+	//args.push(ctx.projectName);
 
 	if (opts.features) {
 		if (opts.features === "all") {
@@ -172,6 +172,7 @@ export function parseCargoArgs(opts: CargoOptions, ctx: ExecutorContext): string
 		}
 	}
 	if (opts.verbose) args.push("--verbose");
+	if (opts.target) args.push("--target", opts.target);
 	if (opts.offline) args.push("--offline");
 	if (opts.release) args.push("--release");
 	if (opts['output-json']) args.push("--output-json")

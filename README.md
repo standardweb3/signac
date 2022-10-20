@@ -40,3 +40,17 @@ node ./dist/package/core/src/index.js --help
 | @signac/events | [![npm](https://img.shields.io/npm/v/@signac/config)](https://www.npmjs.com/package/@signac/events) | [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [![documentation](https://img.shields.io/badge/readme-blue) ](./packages/events) | Event emitter for Signac framework          |
 | @signac/error  | [![npm](https://img.shields.io/npm/v/@signac/error)](https://www.npmjs.com/package/@signac/error)   | [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [![documentation](https://img.shields.io/badge/readme-blue) ](./packages/error)  | Error handler for Signac framework          |
 | nxink          | [![npm](https://img.shields.io/npm/v/nxink)](https://www.npmjs.com/package/nxink)                   | [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) | [![documentation](https://img.shields.io/badge/readme-blue) ](./packages/nxink)  | Nx plugin which is used in the workspace    |
+
+## Contributors
+
+Read our [contributors document](/CONTRIBUTING.md), [submit an issue](https://github.com/standardweb3/signac/issues/new/choose) or talk to us on our [Discord](https://discord.gg/yjyvFRP)!
+
+## Meetings
+
+Weekly contributor meetings are public and announced on Discord. Feel free to check out our meeting notes and documents on [HackMD](https://hackmd.io/@wemeetagain/rJTEOdqPS/%2FXBzvaQgMTyyMJuToWAEDjw). Post-September 2021, meeting notes can be found on the [Lodestar Wiki Page](https://github.com/ChainSafe/lodestar/wiki).
+
+## Donations
+
+We are a local group of Toronto open-source developers. As such, all of our open-source work is funded by grants. We all take the time out of our hectic lives to contribute to the Ethereum ecosystem.
+If you want to donate, you can send us ETH at the following address: `lodestar.chainsafe.eth`
+

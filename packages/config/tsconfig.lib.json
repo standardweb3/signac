@@ -12,6 +12,7 @@
 		"importHelpers": true,
 		"removeComments": true,
 		"types": ["jest", "node"],
+		"composite": true
 	},
 	"updateBuildableProjectDepsInPackageJson": true,
  	"buildableProjectDepsInPackageJsonType": "dependencies",

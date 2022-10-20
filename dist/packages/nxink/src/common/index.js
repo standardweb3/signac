@@ -113,6 +113,8 @@ function parseCargoArgs(opts, ctx) {
     }
     if (opts.verbose)
         args.push("--verbose");
+    if (opts.target)
+        args.push("--target", opts.target);
     if (opts.offline)
         args.push("--offline");
     if (opts.release)
