@@ -10,5 +10,10 @@ describe("generate nxink:ink", () => {
 		expect(() => {
 			nrwl.checkFilesExist(`contracts/${ink}/src/lib.rs`);
 		}).not.toThrow();
+
+		expect(() => {
+			nrwl.checkFilesExist(`signac.config.js`);
+		}).not.toThrow();
+	
 	}, 120000);
 });

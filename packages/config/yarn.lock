@@ -675,17 +675,17 @@
     "@babel/runtime" "^7.16.3"
     "@polkadot/x-global" "7.9.2"
 
-"@signac/error@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.4.tgz#c47a30322f9fcf76bff51e0d27a5eda4bf0b2d9c"
-  integrity sha512-5MK2KGDxRZjFC3XDwVhhNPabzzgvfAio719CC2xRJc981CqBe80mpKXiQTLuwWT5ppHroXJZ0pvClU3TfHR4Ew==
+"@signac/error@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@signac/error/-/error-0.0.6.tgz#9471ac859ce66b6cb881664540f82d7fe1d11c79"
+  integrity sha512-LKSvgxJ5OfUyiGelhsuWODGrLdVvYQ1AgtAEbTqwVkcZWgF6u0G6g18DsQebDoh0BVZqEkbaA+GVH7JmE3qHHw==
   dependencies:
     extendable-error "^0.1.7"
 
-"@signac/events@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@signac/events/-/events-0.0.2.tgz#25bf3139ca1b3f4096960ff43d7b40c81c63fe90"
-  integrity sha512-gPBoYwdtjhbYJxJv42ZOcwN1bdQL+woDcGhDEoSb/TTKCIJOwVfnUAiXeMb48w1vVDn5FeQBn7LiaOv+TNpGJQ==
+"@signac/events@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@signac/events/-/events-0.0.4.tgz#27c242fba36f2aa25d75897e39b0b16fe502b00a"
+  integrity sha512-1fMsW5lvY0AxgRVjekHCDwaJrp+zIW/5RmeDhOdjQF8dm9/AFZSBh7vp2OVzH0J+4awzlJ1zM39xTithS0D+yA==
   dependencies:
     configstore "^5.0.1"
     console-stamp "^3.0.3"

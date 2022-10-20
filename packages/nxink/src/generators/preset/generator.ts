@@ -36,6 +36,7 @@ function addFiles(host: Tree, options: Options) {
 
 	let gitignore = host.read(".gitignore")?.toString() ?? "";
 	gitignore += "/target";
+	gitignore += "signac.config.js"
 
 	host.write(".gitignore", gitignore);
 }

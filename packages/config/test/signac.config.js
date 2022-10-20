@@ -8,9 +8,9 @@ module.exports = {
     },
     networks: {
       local: {
-        url: "",
+        rpc: 'http://localhost:9933',
         typedef: undefined,
-        accounts: ""
+        accounts: ["test test test test"]
       }
     }
   };

@@ -1,7 +1,7 @@
-const config = require("./signac-config.js");
+const config = require("./signac.config.js");
 var validate = require("validate.js");
 const { check } = require("prettier");
-import SignacConfig from "../src/index"
+import SignacConfig from "../src/index";
 
 var keyConstraints = {
 	rust: {
@@ -15,11 +15,13 @@ var keyConstraints = {
 };
 
 var networkConstraints = {
-	url: {
+	rpc: {
 		presence: {
 			allowEmpty: false,
 		},
-		url: true,
+		url: {
+			allowLocal: true,
+		},
 	},
 	typedef: {
 		presence: false,
@@ -38,7 +40,7 @@ const checkValid = (data: any, constraints: any) => {
 	}
 };
 
-describe("validate configuratiion file", () => {
+describe("validate configuration file", () => {
 	test("tests a function with an error return", () => {
 		let config = {
 			rust: {
@@ -49,12 +51,14 @@ describe("validate configuratiion file", () => {
 				],
 			},
 		};
-		expect(checkValid(config, keyConstraints)).toThrow()
+		expect(() => {
+			checkValid(config, keyConstraints);
+		}).toThrow();
 	});
-    test("loads SignacConfig", () => {
-        const a = new SignacConfig({dir: "./signac-config.js"});
-    })
-	test("rust should not be necessary for config", () => {
+	test("loads SignacConfig", () => {
+		const a = new SignacConfig({ dir: "./packages/config/test/signac.config.js" });
+	});
+	test("validate configuration file", () => {
 		validate.validators.presence.options = { message: "can't be empty" };
 		// validate whether key exists
 		checkValid(config, keyConstraints);
@@ -64,22 +68,27 @@ describe("validate configuratiion file", () => {
 			// validate each network schema constraints
 			checkValid(network, networkConstraints);
 			// validate each network keys in accounts
-			Object.keys(network["accounts"]).every(a => {
-				checkValid(a, {
-					presence: true,
-					format: {
-						// Must be numbers followed by a name
-						pattern: "^[a-zA-Zs-]+$",
-						message: function (value: any) {
-							return validate.format(
-								"a mnemonic or private key ^%{key} must be only letters, spaces, or dashes",
-								{
-									key: value,
-								}
-							);
+			Object.keys(network["accounts"]).every(i => {
+				checkValid(
+					{ account: network["accounts"][i] },
+					{
+						account: {
+							presence: true,
+							format: {
+								// Must be numbers followed by a name
+								pattern: /[a-z -0-9]+/,
+								message: function (value: any) {
+									return validate.format(
+										": A mnemonic or a private key %{key} must be only letters, spaces, numbers, or dashes",
+										{
+											value,
+										}
+									);
+								},
+							},
 						},
-					},
-				});
+					}
+				);
 			});
 		});
 	});

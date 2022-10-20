@@ -3,6 +3,7 @@ import { EventManager } from "@signac/events";
 import SignacError from "@signac/error";
 import validate from "validate.js";
 import findUp from "find-up";
+import { resolve } from "path";
 const fs = require("fs");
 
 var keyConstraints = {
@@ -17,11 +18,13 @@ var keyConstraints = {
 };
 
 var networkConstraints = {
-	url: {
+	rpc: {
 		presence: {
 			allowEmpty: false,
 		},
-		url: true,
+		url: {
+			allowLocal: true,
+		},
 	},
 	typedef: {
 		presence: false,
@@ -43,7 +46,7 @@ const checkValid = (data: any, constraints: any) => {
 	}
 };
 
-const validateConifg = (config: any) => {
+const validateConfig = (config: any) => {
 	validate.validators.presence.options = { message: "can't be empty" };
 	// validate whether key exists
 	checkValid(config, keyConstraints);
@@ -53,19 +56,21 @@ const validateConifg = (config: any) => {
 		// validate each network schema constraints
 		checkValid(network, networkConstraints);
 		// validate each network keys in accounts
-		Object.keys(network["accounts"]).every(a => {
-			checkValid(a, {
-				presence: true,
-				format: {
-					// Must be numbers followed by a name
-					pattern: "^[a-zA-Zs-]+$",
-					message: function (value: any) {
-						return validate.format(
-							"a mnemonic or private key ^%{key} must be only letters, spaces, or dashes",
-							{
-								key: value,
-							}
-						);
+		Object.keys(network["accounts"]).every(i => {
+			checkValid({"account": network["accounts"][i]}, {
+				account : {
+					presence: true,
+					format: {
+						// Must be numbers followed by a name
+						pattern: "[a-z -0-9]+",
+						message: function (value: any) {
+							return validate.format(
+								"a mnemonic or private key %{key} must be only letters, spaces, numbers or dashes",
+								{
+									key: value,
+								}
+							);
+						},
 					},
 				},
 			});
@@ -76,15 +81,15 @@ const validateConifg = (config: any) => {
 class SignacConfig {
 	[key: string]: any;
 
-	constructor({ dir = "./signac-config.js" }) {
+	constructor({ dir = "./signac.config.js" } = {}) {
 		const eventsOptions = this.eventManagerOptions(this);
 		this["events"] = new EventManager(eventsOptions);
-
-		if (fs.existsSync(dir)) {
-			//file exists
+		const absDir = resolve(dir);
+		//file exists
+		if (fs.existsSync(absDir)) {
 			// load config file
-			const config = require(dir);
-			validateConifg(this)
+			const config = require(absDir);
+			validateConfig(config);
 			for (const [key, value] of Object.entries(config)) {
 				this[key] = value;
 			}
@@ -93,13 +98,13 @@ class SignacConfig {
 			const path = findUp.sync("signac.config.js");
 			if (path) {
 				const config = require(dir);
-				validateConifg(this);
+				validateConfig(config);
 				for (const [key, value] of Object.entries(config)) {
 					this[key] = value;
 				}
 			} else {
 				throw new SignacError(
-					"signac-config.js does not exist in your current working directory",
+					"signac.config.js does not exist in your current working directory",
 					404
 				);
 			}
