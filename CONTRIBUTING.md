@@ -30,10 +30,32 @@ Nx plugin located in `nxink` packages defines available commands for each distin
 
 ### Test framework codebase
 
-To run each package of Signac, look up each directory in the `packages` folder of the root directory, then run command:
+> :warning: **Warning!**
+> **If you are trying to build tests and contribute to the codebase, you need to have these skills:**
+> - ***Setting up jest test env with its config file `jest.config.js`***
+> - ***Extensive knowledge of [Nx monorepo framework](https://nx.dev/)***
+> - ***Installing [Node.js](https://nodejs.org/en/) and managing versions***
+> *Otherwise, you may become grumpy and end up rage quitting the contribution to the codebase*. 
+
+
+First run `yarn` to install nx packages to operate with each package in the monorepo. 
+
+Then you need to download dependancies of each package in the Nx monorepo. There is a script to bootstrap each package of Signac. Run with the command in the project root:
+
+```
+yarn bootstrap
+```
+
+To test each package of Signac, look up each directory in the `packages` folder of the root directory, then run command:
 
 ```
 nx test <directory>
+```
+
+If you want to run the test as whole, run command in the framework root directory:
+
+```
+yarn test
 ```
 
 To debug after editing the codebase in each package so that you can get your hands dirty, run `ts-node` installed in the package after running `yarn`.
@@ -44,6 +66,9 @@ cd packages/core/src
 yarn
 npx ts-node index.ts
 ```
+
+###### Troubleshooting
+
 
 
 #### Hardhat task vs Signac task

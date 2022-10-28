@@ -24,7 +24,7 @@
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["coverage/packages/events"],
 			"options": {
-				"jestevents": "packages/events/jest.events.js",
+				"jestConfig": "packages/events/jest.config.js",
 				"passWithNoTests": true
 			}
 		}

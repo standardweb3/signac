@@ -28,12 +28,7 @@ const runCommand = async (project) => {
             type: "list",
             name: "intent",
             message: "What do you want to do?",
-            choices: [
-                CREATE_WORKSPACE,
-                CREATE_EMPTY,
-                LAUNCH_CONTRACT_PORTAL,
-                QUIT,
-            ],
+            choices: [CREATE_WORKSPACE, CREATE_EMPTY, LAUNCH_CONTRACT_PORTAL, QUIT],
         },
     ])
         .then(async (answers) => {

@@ -145,15 +145,15 @@
     kleur "^4.1.5"
     string-similarity "^4.0.4"
 
-"@signac/config@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@signac/config/-/config-0.0.2.tgz#9daa954d2e72db89281e19b6dfa2bed8981eef42"
-  integrity sha512-xGheqb9l5nTyYACDQuDDaFc5voUB+r607rW2fPPKMiG0YKWAGqhKQVD4FdejK3FIpo2wWWjAE7JrmmVyjgjtDQ==
+"@signac/config@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@signac/config/-/config-0.0.3.tgz#774e7287afe13f76e61521b80d0cad97b76382fb"
+  integrity sha512-5QqzsWUKQ8VchX25SZLbGO2mtpBuTMudKK5DJygTHkt1EutphSzAbDs8JPziwWjJ2sND3lJ7WUWzTThKiioh+g==
   dependencies:
     "@polkadot/util" "^7.0.1"
     "@polkadot/util-crypto" "^7.0.1"
-    "@signac/error" "0.0.4"
-    "@signac/events" "0.0.2"
+    "@signac/error" "0.0.6"
+    "@signac/events" "0.0.4"
     configstore "^4.0.0"
     find-up "^4.0.0"
     lodash.assignin "^4.2.0"
@@ -175,20 +175,6 @@
   dependencies:
     extendable-error "^0.1.7"
 
-"@signac/events@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@signac/events/-/events-0.0.2.tgz#25bf3139ca1b3f4096960ff43d7b40c81c63fe90"
-  integrity sha512-gPBoYwdtjhbYJxJv42ZOcwN1bdQL+woDcGhDEoSb/TTKCIJOwVfnUAiXeMb48w1vVDn5FeQBn7LiaOv+TNpGJQ==
-  dependencies:
-    configstore "^5.0.1"
-    console-stamp "^3.0.3"
-    emittery "^0.7.1"
-    find-up "^2.1.0"
-    lodash.assignin "^4.2.0"
-    lodash.merge "^4.6.2"
-    original-require "1.0.1"
-    source-map-support "^0.5.19"
-
 "@signac/events@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@signac/events/-/events-0.0.4.tgz#27c242fba36f2aa25d75897e39b0b16fe502b00a"
@@ -203,10 +189,10 @@
     original-require "1.0.1"
     source-map-support "^0.5.19"
 
-"@signac/init@0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@signac/init/-/init-0.0.23.tgz#869899650459c93110b0b7204fcb0444b5a6ea3d"
-  integrity sha512-ctADtmb+QSH283ZRmhtvw6zfHKhVxHrQfmff+BsUu81sOCKcv4sUWFrFRF9xpm34uHjNJmXCQBqs9a/NEgFlaA==
+"@signac/init@0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@signac/init/-/init-0.0.27.tgz#371dc3389005061f0e3079980c3d4b7e74db8336"
+  integrity sha512-E8HShuBj7jtK3LQ+0rf53fjlwzC2pUQWmFsoMABmVrZ6/g4Cj0Tej7vqql9x05PAAo3KbZpv/4Sqt2NJM8+8Gw==
   dependencies:
     "@types/inquirer" "^9.0.1"
     chalk "^4.1.0"

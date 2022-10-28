@@ -1,16 +1,17 @@
 import * as cp from "child_process";
 import chalk from "chalk";
 import inquirer from "inquirer";
-import open from "open"
+import open from "open";
 
 const color = "#1890FF";
 
 const workspaceName = { workspaceName: "" };
 
 // Setup each command as variable to prevent mismatch in parsing choices
-const CREATE_WORKSPACE = "Create a workspace with an ink! contract"
-const CREATE_EMPTY = "Create an empty workspace with signac.config.js"
-const LAUNCH_CONTRACT_PORTAL = "Launch the contract portal to deploy smart contracts"
+const CREATE_WORKSPACE = "Create a workspace with an ink! contract";
+const CREATE_EMPTY = "Create an empty workspace with signac.config.js";
+const LAUNCH_CONTRACT_PORTAL =
+	"Launch the contract portal to deploy smart contracts";
 const QUIT = "Quit";
 
 const runCommand = async (project: any) => {
@@ -24,7 +25,9 @@ const runCommand = async (project: any) => {
 	╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝                                            
 	`)
 	);
-	const version = await execute(`curl -s \"https://registry.npmjs.org/signac\" | \ python3 -c \"import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])\"`)
+	const version = await execute(
+		`curl -s \"https://registry.npmjs.org/signac\" | \ python3 -c \"import sys, json; print(json.load(sys.stdin)['dist-tags']['latest'])\"`
+	);
 	console.log(
 		chalk.cyan(`🖼  Welcome to Signac v${version.replace(/[\r\n]/gm, "")} 🎨`)
 	);
@@ -34,12 +37,7 @@ const runCommand = async (project: any) => {
 				type: "list",
 				name: "intent",
 				message: "What do you want to do?",
-				choices: [
-					CREATE_WORKSPACE,
-					CREATE_EMPTY,
-					LAUNCH_CONTRACT_PORTAL,
-					QUIT,
-				],
+				choices: [CREATE_WORKSPACE, CREATE_EMPTY, LAUNCH_CONTRACT_PORTAL, QUIT],
 			},
 		])
 		.then(async (answers: any) => {

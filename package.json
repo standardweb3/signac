@@ -11,7 +11,7 @@
 		"bootstrap:dist": "bash ./scripts/dist-yarn.sh",
 		"publish:dist": "node ./scripts/publish-dist-package.js",
 		"update:dist": "node ./scripts/update-dist-package.js",
-		"test": "nx test",
+		"test": "bash ./scripts/test-packages.sh",
 		"lint": "nx workspace-lint && nx lint",
 		"e2e": "jest e2e/nxink-e2e --runInBand",
 		"se2e": "jest e2e/signac-e2e --runInBand",
