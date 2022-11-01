@@ -7,6 +7,34 @@ const color = "#1890FF";
 
 const workspaceName = { workspaceName: "" };
 
+interface Answer {
+	intent: string;
+}
+
+interface Choices {
+	[key: string]: (params:string) => Promise<void>;
+}
+
+const answerMap: Choices = {
+	"Create a workspace with an ink! contract" : async (project: string) => {
+		await askName(project);
+		await runNx(workspaceName["workspaceName"]);
+		await addContract(workspaceName["workspaceName"]);
+		await removeDefaultDirs(workspaceName["workspaceName"]);
+	},
+	"Create an empty workspace with signac.config.js": async (project: string) => {
+		await askName(project);
+		await runNx(workspaceName["workspaceName"]);
+		await removeDefaultDirs(workspaceName["workspaceName"]);
+	},
+	"Launch the contract portal": async (project: string) => {
+		await open("https://contract.standard.tech");
+	},
+	"Quit": async (project: string) => {
+		return;
+	}
+}
+
 // Setup each command as variable to prevent mismatch in parsing choices
 const CREATE_WORKSPACE = "Create a workspace with an ink! contract";
 const CREATE_EMPTY = "Create an empty workspace with signac.config.js";
@@ -37,41 +65,17 @@ const runCommand = async (project: any) => {
 				type: "list",
 				name: "intent",
 				message: "What do you want to do?",
-				choices: [CREATE_WORKSPACE, CREATE_EMPTY, LAUNCH_CONTRACT_PORTAL, QUIT],
+				choices: Object.keys(answerMap),
 			},
 		])
 		.then(async (answers: any) => {
-			switch (answers.intent) {
-				case CREATE_WORKSPACE: {
-					await askName(project);
-					await runNx(workspaceName["workspaceName"]);
-					await addContract(workspaceName["workspaceName"]);
-					await removeDefaultDirs(workspaceName["workspaceName"]);
-					break;
-				}
-				case CREATE_EMPTY: {
-					await askName(project);
-					await runNx(workspaceName["workspaceName"]);
-					await removeDefaultDirs(workspaceName["workspaceName"]);
-					break;
-				}
-				case LAUNCH_CONTRACT_PORTAL: {
-					await open("https://contract.standard.tech");
-					break;
-				}
-				case QUIT: {
-					break;
-				}
-				default: {
-					break;
-				}
-			}
+			await answerMap[answers.intent as string](project)
 		});
 };
 
-function askName(project: string | undefined) {
+function askName(project: string) {
 	return new Promise<void>(resolve => {
-		if (project !== undefined) {
+		if (project !== "") {
 			workspaceName["workspaceName"] = project;
 		}
 		inquirer
@@ -155,3 +159,7 @@ const execute = async (command: string): Promise<any> => {
 };
 
 export default runCommand;
+function async(arg0: Answer): ((value: any) => any) | null | undefined {
+	throw new Error("Function not implemented.");
+}
+

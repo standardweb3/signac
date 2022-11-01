@@ -67,10 +67,6 @@ yarn
 npx ts-node index.ts
 ```
 
-###### Troubleshooting
-
-
-
 #### Hardhat task vs Signac task
 
 Hardhat's task has made its own domain-specific-language to execute certain task focused only on ethereum. This requires developers to understand its domain specific language to build plugins. Meanwhile, Signac's task is not bound to specific use case of the domain language. It is just a pure javascript extension of `commander.js` that implements simple CLI, in which it can be integrated with other libraries easily without going through domain language parser. 
